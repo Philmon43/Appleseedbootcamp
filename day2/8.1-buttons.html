@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.1-buttons</title>
+</head>
+<style>
+    * {
+        background-color: rgb(18, 54, 102);
+        box-sizing: border-box;
+        color: white;
+    }
+
+    :root {
+        --allpading: 10px 25px;
+    }
+
+    div>* {
+        margin-right: 3em;
+    }
+
+    .flat button {
+        border: none;
+        padding: var(--allpading);
+        font-size: 20px;
+        background-color: #4CAF50;
+        ;
+    }
+
+    .flat a {
+        text-decoration: none;
+        font-size: 20px;
+        padding: var(--allpading);
+        background-color: #DC143C;
+    }
+
+    .flat input {
+        border: none;
+        padding: var(--allpading);
+        background-color: dodgerblue;
+    }
+
+    .round button {
+        border: none;
+        padding: var(--allpading);
+        font-size: 20px;
+        background-color: orange;
+        border-radius: 5em;
+    }
+
+    .round a {
+        text-decoration: none;
+        font-size: 20px;
+        padding: var(--allpading);
+        background-color: rgb(255, 238, 0);
+        border-radius: 5em;
+    }
+
+    .round input {
+        border: none;
+        padding: var(--allpading);
+        background-color: lightgray;
+        border-radius: 5em;
+    }
+
+    .flat_ghost button {
+        border: none;
+        padding: var(--allpading);
+        font-size: 20px;
+        border: 2px solid #4CAF50;
+    }
+
+    .flat_ghost a {
+        text-decoration: none;
+        font-size: 20px;
+        padding: var(--allpading);
+        border: 2px solid #DC143C;
+    }
+
+    .flat_ghost input {
+        border: none;
+        padding: var(--allpading);
+        border: 2px solid dodgerblue;
+    }
+
+    .round_ghost button {
+        border: none;
+        padding: var(--allpading);
+        font-size: 20px;
+        border: 2px solid orange;
+        border-radius: 5em;
+    }
+
+    .round_ghost a {
+        text-decoration: none;
+        font-size: 20px;
+        padding: var(--allpading);
+        border: 2px solid rgb(255, 238, 0);
+        border-radius: 5em;
+    }
+
+    .round_ghost input {
+        border: none;
+        padding: var(--allpading);
+        border: 2px solid lightgray;
+        border-radius: 5em;
+    }
+
+    .flat button:hover,
+    .flat a:hover,
+    .flat input:hover,
+    .round button:hover,
+    .round a:hover,
+    .round input:hover,
+    .flat_ghost button:hover,
+    .flat_ghost a:hover,
+    .flat_ghost input:hover,
+    .round_ghost button:hover,
+    .round_ghost a:hover,
+    .round_ghost input:hover {
+        opacity: .9;
+    }
+</style>
+
+<body>
+    <h2>Flat</h2>
+    <div class="flat">
+        <button>Register</button>
+        <a href="#">Clear</a>
+        <input type="submit">
+    </div>
+    <h2>Round</h2>
+    <div class="round">
+        <button>Register</button>
+        <a href="#">Clear</a>
+        <input type="submit">
+    </div>
+    <h2>Flat Ghost</h2>
+    <div class="flat_ghost">
+        <button>Register</button>
+        <a href="#">Clear</a>
+        <input type="submit">
+    </div>
+    <h2>Round Ghost</h2>
+    <div class="round_ghost">
+        <button>Register</button>
+        <a href="#">Clear</a>
+        <input type="submit">
+    </div>
+</body>
+
+</html>
