@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7.2-refactor_with_float</title>
+    <title>7.1-float_layout</title>
+    <style>
+        #body {
+            width: 70%;
+            margin: auto;
+        }
+
+        #body div {
+            margin: 1px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        div p {
+            text-align: center;
+            padding: 2px;
+        }
+
+        .header {
+            float: left;
+            width: 100%;
+            background-color: orange;
+        }
+
+        .side {
+            background-color: green;
+            float: left;
+            width: 30%;
+            height: 70vh;
+        }
+
+        .main {
+            background-color: darkviolet;
+            float: right;
+            width: calc(70% - 10px);
+            height: 70vh;
+        }
+
+        .footer {
+            background-color: blue;
+            float: left;
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="body">
+        <div class="header">
+            <p>Header</p>
+        </div>
+        <div class="side">
+            <p>Side</p>
+        </div>
+        <div class="main">
+            <p>Main</p>
+        </div>
+        <div class="footer">
+            <p>Footer</p>
+        </div>
+    </div>
 </body>
+
 </html>
