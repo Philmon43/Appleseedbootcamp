@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.2-positioning-2</title>
+    <style>
+        #outer {
+            width: 100px;
+            height: 100px;
+            background: darkcyan;
+            margin: 50px;
+            position: relative;
+        }
+       /* absolute is The element is positioned relative to its first positioned (not static) ancestor element */
+        #inner {
+            width: 50px;
+            height: 50px;
+            background: lightgreen;
+            position: relative; /* in this case we need to change inner box to relative to its normal position */
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        Box Title
+        <div id="inner">
+
+        </div>
+    </div>
+</body>
+</html>

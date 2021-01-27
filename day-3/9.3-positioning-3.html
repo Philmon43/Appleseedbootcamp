@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.3-positioning-3</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .box {
+        border: 5px solid black;
+        position: absolute;
+        background-color: white;
+    }
+
+    #box_one {
+        width: 200px;
+        height: 200px;
+    }
+
+    #box_two {
+        top: 150px;
+        left: 150px;
+        width: 200px;
+        height: 300px;
+    }
+
+    #box_three {
+        bottom: 240px;
+        left: 0;
+        width: 600px;
+        height: 150px;
+    }
+
+    #box_four {
+        width: 100px;
+        height: 500px;
+        right: 900px;
+    }
+</style>
+
+<body>
+    <div id="box_one" class="box">div one</div>
+    <div id="box_two" class="box">div two</div>
+    <div id="box_three" class="box">div three</div>
+    <div id="box_four" class="box">div four</div>
+</body>
+
+</html>
