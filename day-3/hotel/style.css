@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: beige;
+}
+
+.header {
+    position: relative;
+    padding: 30px 20px 30px 80px;
+}
+
+.navbar {
+    border-top: 1px solid gray;
+}
+
+.navbars {
+    float: left;
+    width: 50%;
+}
+
+.social_medias {
+    float: right;
+}
+
+.navbars,
+.social_medias {
+    padding: 15px 30px;
+}
+
+.navbars li,
+.social_medias li {
+    float: left;
+}
+
+.navbars li,
+.social_medias li {
+    list-style: none;
+}
+
+.navbars a,
+.social_medias a {
+    text-decoration: none;
+}
+
+.navbars a {
+    padding: 5px 15px;
+}
+
+.social_medias a {
+    padding: 5px;
+}
+
+.navbars a,
+.social_medias a {
+    color: #333;
+}
+
+.navbars a:hover,
+.social_medias a:hover {
+    color: orange;
+}
+
+.main {
+    border-top: 1px solid gray;
+    clear: both;
+    text-align: center;
+    color: white;
+}
+
+.main>p {
+    position: relative;
+    top: 100px;
+}
+
+.main h1 {
+    position: relative;
+    top: 130px;
+    font-size: 70px;
+}
+
+.main button {
+    position: relative;
+    top: 155px;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 20px;
+    padding: 10px 30px;
+    border: 2px solid orange;
+    color: white;
+    border-radius: 1em;
+}
+
+.main button:hover {
+    opacity: .7;
+}
+
+.main>h1>span {
+    font-style: italic;
+}
+
+.main{
+    background-image: url("./img/showcase.jpg");
+    background-size: cover;
+    height: 500px;
+}
+
+.about_page{
+    border-top: 1px solid gray;
+    clear: both;
+}
+
+.about_container{
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.about_desc{
+    float: left;
+    width: 50%;
+}
+
+.about_top>img{
+    float: left;
+    margin: auto;
+    width: 70%;
+    border-radius: 50%;
+}
