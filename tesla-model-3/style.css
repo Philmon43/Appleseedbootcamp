@@ -9,6 +9,7 @@
 .secont_one {
     background: url("./img/model-3-hero-desktop.jpeg") no-repeat;
     background-size: cover;
+    background-position:0% 35%;
     height: 100vh;
     color: white;
     padding: 15px;
