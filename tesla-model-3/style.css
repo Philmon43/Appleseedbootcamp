@@ -62,8 +62,12 @@
 .uper_model_info_box {
     float: left;
     width: 25%;
-    padding: 20px;
+    padding: 10px 20px;
     text-align: center;
+}
+
+.tachometer{
+    border-right: 1px solid white;
 }
 
 .uper_model_info_box>.btn {
@@ -76,7 +80,7 @@
     padding: 10px 20px;
     margin: 0;
     position: absolute;
-    top: 25%;
+    top: 20%;
     margin-bottom: 25%;
     cursor: pointer;
 }
@@ -87,6 +91,8 @@
 .down_arrow {
     clear: both;
     text-align: center;
+    position: relative;
+    top: 20px;
 }
 .down_arrow>a{
     text-decoration: none;
