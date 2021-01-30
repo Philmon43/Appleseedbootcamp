@@ -242,6 +242,17 @@
     float: left;
 }
 
+.safety_btn_lmore:hover .safety_btn_lmore_learn_sign>p{
+    background: black;
+    color: white;
+    transition: .5s;
+}
+
+.safety_btn_onow:hover .safety_btn_onow_btn{
+    background: black;
+    color: white;
+    transition: .5s;
+}
 
 .section_three {
     width: 100%;
