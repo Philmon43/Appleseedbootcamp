@@ -311,7 +311,8 @@
     line-height: 20px;
 }
 
-.performance_lower, .allwheel_lower{
+.performance_lower,
+.allwheel_lower {
     background: white;
     height: 35vh;
 }
@@ -339,11 +340,13 @@
     line-height: 30px;
 }
 
-.performance_lower_boxs>p>span {
+.performance_lower_boxs>p>span,
+.section_five_second_upper>p>span {
     display: block;
 }
 
-.performance_lower_boxs>p>.Quickest {
+.performance_lower_boxs>p>.Quickest,
+.section_five_second_upper>p>.Quickest {
     font-weight: bold;
     font-size: 30px;
     white-space: nowrap;
@@ -355,7 +358,7 @@
     background: dodgerblue;
 }
 
-.section_three>.allwheel_uper{
+.section_three>.allwheel_uper {
     background: url("./img/lhd-awd-hero-desktop.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -366,11 +369,11 @@
     position: relative;
 }
 
-.section_five{
+.section_five {
     height: 100vh;
 }
 
-.section_five_first_box{
+.section_five_first_box {
     position: relative;
     float: left;
     width: 72%;
@@ -382,10 +385,18 @@
     color: white;
 }
 
-.section_five_second_box{
+.section_five_second_box {
     position: relative;
     float: right;
     width: 28%;
     height: 100vh;
     background: white;
+    padding: 40px 20px;
+}
+
+.section_five_second_middle {
+    letter-spacing: .5px;
+    font-size: 15px;
+    padding-top: 10px;
+    line-height: 25px;
 }
