@@ -65,7 +65,7 @@
 .uper_model_info_box {
     float: left;
     width: 25%;
-    padding: 10px 20px;
+    padding: 2px;
     text-align: center;
 }
 
@@ -84,10 +84,12 @@
     margin-bottom: 25%;
     cursor: pointer;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: white;
     color: black;
 }
+
 .uper_model_info_box>p {
     font-size: 13px;
 }
