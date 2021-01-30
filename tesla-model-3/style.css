@@ -57,7 +57,7 @@
 
 .model_info {
     position: absolute;
-    bottom: 60px;
+    bottom: 40px;
     width: 50%;
     margin-left: 25%;
 }
@@ -84,7 +84,10 @@
     margin-bottom: 25%;
     cursor: pointer;
 }
-
+.btn:hover{
+    background-color: white;
+    color: black;
+}
 .uper_model_info_box>p {
     font-size: 13px;
 }
