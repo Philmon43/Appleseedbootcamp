@@ -42,8 +42,7 @@
 }
 
 /* tesla logos */
-.secont_one>.header>.logo img,
-.black_logo img {
+.secont_one>.header>.logo img {
     width: 100px;
 }
 
@@ -107,6 +106,7 @@
 
 .navigation_bar {
     position: fixed;
+    z-index: 1;
     top: 25%;
 }
 
@@ -139,6 +139,7 @@
 
 .section_two_box {
     float: left;
+    position: relative;
     padding: 15px;
 }
 
@@ -171,20 +172,27 @@
     text-decoration: none;
     color: black;
 }
-.safety_btn{
-    position: relative;
-    top: 35%;
-    text-align: center;
-    margin: 0 20px;
+
+.safety {
+    padding: 20px;
 }
 
-.safety_btn>div,.safety_btn_lmore>div{
+.safety_btn {
+    position: absolute;
+    bottom: 60px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.safety_btn>div,
+.safety_btn_lmore>div {
     float: left;
     width: 50%;
     cursor: pointer;
 }
 
-.safety_btn_lmore_learn_sign>p{
+.safety_btn_lmore_learn_sign>p {
     border: 3px solid black;
     width: 40px;
     height: 40px;
@@ -195,27 +203,43 @@
     font-weight: bold;
 }
 
-.safety_btn_onow_btn{
-   border: 3px solid black;
-   padding: 10px;
-   margin: 0 15px;
-   border-radius: 2em;
-   cursor: pointer;
+.safety_btn_onow_btn {
+    border: 3px solid black;
+    padding: 10px;
+    margin: 0 15px;
+    border-radius: 2em;
+    cursor: pointer;
 }
 
-.safety_btn_lmore_learn_desc>p{
-    font-weight:lighter;
+.safety_btn_lmore_learn_desc>p {
+    font-weight: lighter;
     font-size: 15px;
     padding: 10px 0;
 }
 
-.safety{
-    padding: 20px;
-}
-.safety>p:nth-child(3){
+.safety>p:nth-child(3) {
     padding: 20px 0;
     font-weight: lighter;
-    line-height: 20pt; 
+    line-height: 20pt;
+}
+
+.fixed_tesla_logo_and_backbtn {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+}
+
+.fixed_tesla_logo_and_backbtn {
+    padding: 12px 20px;
+}
+
+.fixed_tesla_logo_and_backbtn>.black_logo>img {
+    width: 110px;
+}
+
+.fixed_tesla_logo_and_backbtn>.black_logo {
+    float: left;
 }
 
 
