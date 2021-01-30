@@ -242,13 +242,13 @@
     float: left;
 }
 
-.safety_btn_lmore:hover .safety_btn_lmore_learn_sign>p{
+.safety_btn_lmore:hover .safety_btn_lmore_learn_sign>p {
     background: black;
     color: white;
     transition: .5s;
 }
 
-.safety_btn_onow:hover .safety_btn_onow_btn{
+.safety_btn_onow:hover .safety_btn_onow_btn {
     background: black;
     color: white;
     transition: .5s;
@@ -256,6 +256,54 @@
 
 .section_three {
     width: 100%;
-    background: red;
     height: 100vh;
+}
+
+.performance_uper {
+    background: url("./img/lhd-performance-hero-desktop.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+    height: 65vh;
+    color: white;
+    width: 100%;
+    position: relative;
+}
+
+.performance_uper_box {
+    position: absolute;
+    width: 100%;
+    bottom: 45px;
+    margin: 0 auto;
+}
+
+.performance_middle {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.performance_middle>div {
+    float: left;
+    width: 33.3%;
+}
+
+.performance_middle>div:nth-child(1),
+.performance_middle>div:nth-child(2) {
+    border-right: 1px solid white;
+}
+
+.performance_uper_boxs {
+    padding: 15px;
+}
+
+.performance_lower {
+    background: dodgerblue;
+    height: 35vh;
+}
+
+.performance_uper_boxs>p {
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 10px;
+    line-height: 20px;
 }
