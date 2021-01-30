@@ -9,7 +9,7 @@
 .secont_one {
     background: url("./img/model-3-hero-desktop.jpeg") no-repeat;
     background-size: cover;
-    background-position:0% 35%;
+    background-position: 0% 35%;
     height: 100vh;
     color: white;
     padding: 15px;
@@ -41,7 +41,9 @@
     text-align: right;
 }
 
-.secont_one>.header>.logo img {
+/* tesla logos */
+.secont_one>.header>.logo img,
+.black_logo img {
     width: 100px;
 }
 
@@ -67,14 +69,11 @@
     text-align: center;
 }
 
-.tachometer{
+.tachometer {
     border-right: 1px solid white;
 }
 
 .uper_model_info_box>.btn {
-    border: none;
-    outline: none;
-    background: none;
     color: white;
     border: 2px solid white;
     border-radius: 2em;
@@ -85,7 +84,8 @@
     margin-bottom: 25%;
     cursor: pointer;
 }
-.uper_model_info_box>p{
+
+.uper_model_info_box>p {
     font-size: 13px;
 }
 
@@ -95,61 +95,132 @@
     position: relative;
     top: 20px;
 }
-.down_arrow>a{
+
+.down_arrow>a {
     text-decoration: none;
     color: white;
 }
-.fa-arrow-down{
+
+.fa-arrow-down {
     font-size: 25px;
 }
-.navigation_bar{
+
+.navigation_bar {
     position: fixed;
     top: 25%;
 }
-.navigation_bar>a{
+
+.navigation_bar>a {
     text-decoration: none;
     color: white;
 }
-.vertical_line{
+
+.vertical_line {
     border-left: 1px solid rgba(211, 211, 211, 0.6);
     padding: 5px 10px;
     margin-bottom: 5px;
 }
 
-.hide{
-   color: transparent;
-   font-size: 12px;
-   font-weight: bold;
+.hide {
+    color: transparent;
+    font-size: 12px;
+    font-weight: bold;
 }
-.navigation_bar>a:hover .hide{
+
+.navigation_bar>a:hover .hide {
     color: white;
     transition: .5s;
 }
 
-.section_two{
+.section_two {
     height: 100vh;
     background-color: white;
 }
 
-.section_two_box{
-   float: left;
+.section_two_box {
+    float: left;
+    padding: 15px;
 }
-.section_two_box_one{
+
+.section_two_box_one {
     background-color: white;
     width: 30%;
     height: 100%;
 }
-.section_two_box_two{
-    background-color: green;
+
+.section_two_box_two {
     background-image: url("./img/model_3_safety_hero.png");
-    background-size:cover;
+    background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
     width: 60%;
     height: 100%;
 }
-.section_two_box_three{
+
+.section_two_box_three {
     background-color: white;
     width: 10%;
     height: 100%;
+}
+
+.back_top_btn {
+    float: right;
+}
+
+.back_top_btn a {
+    text-decoration: none;
+    color: black;
+}
+.safety_btn{
+    position: relative;
+    top: 35%;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.safety_btn>div,.safety_btn_lmore>div{
+    float: left;
+    width: 50%;
+    cursor: pointer;
+}
+
+.safety_btn_lmore_learn_sign>p{
+    border: 3px solid black;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 100%;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.safety_btn_onow_btn{
+   border: 3px solid black;
+   padding: 10px;
+   margin: 0 15px;
+   border-radius: 2em;
+   cursor: pointer;
+}
+
+.safety_btn_lmore_learn_desc>p{
+    font-weight:lighter;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.safety{
+    padding: 20px;
+}
+.safety>p:nth-child(3){
+    padding: 20px 0;
+    font-weight: lighter;
+    line-height: 20pt; 
+}
+
+
+.section_three {
+    width: 100%;
+    background: red;
+    height: 100vh;
 }
