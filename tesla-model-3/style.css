@@ -6,7 +6,7 @@
     scroll-behavior: smooth;
 }
 
-.secont_one {
+.section_one {
     background: url("./img/model-3-hero-desktop.jpeg") no-repeat;
     background-size: cover;
     background-position: 0% 35%;
@@ -14,39 +14,40 @@
     color: white;
     padding: 15px;
     position: relative;
+    z-index: 3;
 }
 
-.secont_one>.header>.logo,
-.secont_one>.header>.navbar,
-.secont_one li {
+.section_one>.header>.logo,
+.section_one>.header>.navbar,
+.section_one li {
     float: left;
     list-style: none;
 }
 
-.secont_one>.header>.logo {
+.section_one>.header>.logo {
     width: 30%;
     cursor: pointer;
 }
 
-.secont_one>.header>.navbar ul li,
-.secont_one>.header>.sidebar>ul>li {
+.section_one>.header>.navbar ul li,
+.section_one>.header>.sidebar>ul>li {
     padding: 0px 12px;
     margin: 0 auto;
     font-size: 15px;
     cursor: pointer;
 }
 
-.secont_one>.header>.sidebar {
+.section_one>.header>.sidebar {
     float: right;
     text-align: right;
 }
 
 /* tesla logos */
-.secont_one>.header>.logo img {
+.section_one>.header>.logo img {
     width: 100px;
 }
 
-.secont_one>.title {
+.section_one>.title {
     clear: both;
     position: relative;
     font-size: 20px;
@@ -177,7 +178,7 @@
     padding: 20px;
 }
 
-.safety_btn {
+.section_two_box>.safety_btn {
     position: absolute;
     bottom: 60px;
     width: 90%;
@@ -231,7 +232,7 @@
 }
 
 .fixed_tesla_logo_and_backbtn {
-    padding: 12px 20px;
+    padding: 16px;
 }
 
 .fixed_tesla_logo_and_backbtn>.black_logo>img {
@@ -255,6 +256,7 @@
 }
 
 .section_three {
+    clear: both;
     width: 100%;
     height: 100vh;
 }
@@ -277,7 +279,8 @@
     margin: 0 auto;
 }
 
-.performance_middle {
+.performance_middle,
+.performance_lower_box {
     width: 70%;
     margin: 0 auto;
 }
@@ -296,14 +299,47 @@
     padding: 15px;
 }
 
-.performance_lower {
-    background: dodgerblue;
-    height: 35vh;
-}
-
 .performance_uper_boxs>p {
     font-size: 13px;
     font-weight: normal;
     margin-top: 10px;
     line-height: 20px;
+}
+
+.performance_lower {
+    background: white;
+    height: 35vh;
+}
+
+.performance_lower_box {
+    position: relative;
+    padding: 40px;
+}
+
+.performance_lower_box>div {
+    float: left;
+    width: 50%;
+}
+
+.performance_lower_boxs_btn>.safety_btn {
+    position: absolute;
+    left: 10px;
+    width: 40%;
+    text-align: center !important;
+    padding-top: 40px;
+}
+
+.performance_lower_boxs>p {
+    font-weight: lighter;
+    line-height: 30px;
+}
+
+.performance_lower_boxs>p>span {
+    display: block;
+}
+
+.performance_lower_boxs>p>.Quickest {
+    font-weight: bold;
+    font-size: 30px;
+    white-space: nowrap;
 }
