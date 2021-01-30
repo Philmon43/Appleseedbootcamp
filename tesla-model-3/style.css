@@ -348,3 +348,9 @@
     font-size: 30px;
     white-space: nowrap;
 }
+
+.section_three {
+    position: relative;
+    height: 100vh;
+    background: dodgerblue;
+}
