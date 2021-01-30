@@ -266,7 +266,7 @@
     height: 100vh;
 }
 
-.performance_uper {
+.section_three>.performance_uper {
     background: url("./img/lhd-performance-hero-desktop.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -311,7 +311,7 @@
     line-height: 20px;
 }
 
-.performance_lower {
+.performance_lower, .allwheel_lower{
     background: white;
     height: 35vh;
 }
@@ -353,4 +353,15 @@
     position: relative;
     height: 100vh;
     background: dodgerblue;
+}
+
+.section_three>.allwheel_uper{
+    background: url("./img/lhd-awd-hero-desktop.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+    height: 65vh;
+    color: white;
+    width: 100%;
+    position: relative;
 }
