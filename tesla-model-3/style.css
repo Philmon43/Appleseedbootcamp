@@ -400,3 +400,13 @@
     padding-top: 10px;
     line-height: 25px;
 }
+
+.section_five_second_middle_map>img{
+    width: 100%;
+    padding: 10px 0;
+}
+.section_five_second_middle_lower{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
