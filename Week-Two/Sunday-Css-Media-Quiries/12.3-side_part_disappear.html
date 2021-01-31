@@ -13,58 +13,68 @@
             text-align: center;
             color: #333
         }
-        .conatainer{
+
+        .conatainer {
             position: relative;
             height: 100vh;
         }
-        .header, .footer{
+
+        .header,
+        .footer {
             padding: 10px 0;
         }
-        .header{
+
+        .header {
             background: indianred;
         }
-        .slide{
+
+        .slide {
             background: lightblue;
             width: 30%;
             float: left;
         }
-        .main{
+
+        .main {
             background: ghostwhite;
         }
-        .footer{
+
+        .footer {
             clear: both;
             background: orange;
         }
-        .main, .slide{
+
+        .main,
+        .slide {
             height: calc(100vh - 76px);
         }
 
         /* Smart phone view */
         @media only screen and (max-width: 500px) {
-            /* default */
+
+            /* on smart phone i want to show only the main page */
+            .header,
+            .slide,
+            .footer {
+                display: none;
+            }
+
+            .main {
+                width: 100%;
+                height: 100vh;
+            }
         }
 
         /* tablet view */
         @media(min-width: 501px) and (max-width: 678px) {
-            .boxes {
-               
+
+            /* on tablet i want show header and footer */
+            .slide {
+                display: none;
             }
-        }
 
-        /* noraml */
-        @media(min-width: 679px) and (max-width: 1024px) {
-
-            /* i want normal view to bee the same as tablet view  */
-            .boxes {
-               
-            }
-        }
-
-
-        /* landscape */
-        @media(min-width: 1025px) {
-            .boxes {
-                
+            .main {
+                display: block;
+                width: 100%;
             }
         }
     </style>
