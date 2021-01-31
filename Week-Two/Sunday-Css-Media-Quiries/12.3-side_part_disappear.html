@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.3-side_part_disappear</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            color: #333
+        }
+        .conatainer{
+            position: relative;
+            height: 100vh;
+        }
+        .header, .footer{
+            padding: 10px 0;
+        }
+        .header{
+            background: indianred;
+        }
+        .slide{
+            background: lightblue;
+            width: 30%;
+            float: left;
+        }
+        .main{
+            background: ghostwhite;
+        }
+        .footer{
+            clear: both;
+            background: orange;
+        }
+        .main, .slide{
+            height: calc(100vh - 76px);
+        }
+
+        /* Smart phone view */
+        @media only screen and (max-width: 500px) {
+            /* default */
+        }
+
+        /* tablet view */
+        @media(min-width: 501px) and (max-width: 678px) {
+            .boxes {
+               
+            }
+        }
+
+        /* noraml */
+        @media(min-width: 679px) and (max-width: 1024px) {
+
+            /* i want normal view to bee the same as tablet view  */
+            .boxes {
+               
+            }
+        }
+
+
+        /* landscape */
+        @media(min-width: 1025px) {
+            .boxes {
+                
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="header">
+            <p>Header</p>
+        </div>
+        <div class="slide">
+            <p>Slide</p>
+        </div>
+        <div class="main">
+            <p>Main</p>
+        </div>
+        <div class="footer">
+            <p>Footer</p>
+        </div>
+    </div>
+</body>
+
+</html>
