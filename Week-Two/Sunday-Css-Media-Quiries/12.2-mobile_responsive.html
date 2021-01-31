@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.2-mobile_responsive</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .boxes {
+            margin: 5px;
+            padding: 5px;
+            background: lightgray;
+        }
+
+        /* Smart phone view */
+        @media only screen and (max-width: 500px) {
+            /* default */
+        }
+
+        /* tablet view */
+        @media(min-width: 501px) and (max-width: 678px) {
+            .boxes {
+                float: left;
+                width: calc(50% - 10px);
+            }
+        }
+
+        /* noraml */
+        @media(min-width: 679px) and (max-width: 1024px) {
+
+            /* i want normal view to bee the same as tablet view  */
+            .boxes {
+                float: left;
+                width: calc(50% - 10px);
+            }
+        }
+
+
+        /* landscape */
+        @media(min-width: 1025px) {
+            .boxes {
+                float: left;
+                width: calc(25% - 10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="boxes">
+            <h1>Item 1</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, ratione obcaecati! Ipsum eaque id,
+                praesentium repudiandae a eos vero, ab similique ad explicabo fuga inventore magnam eum odio dolores
+                expedita quas et suscipit. Possimus placeat maxime voluptatum facilis fugit non eum assumenda cum
+                nesciunt facere? Rerum, architecto eligendi laboriosam, magni fugiat nesciunt sint ducimus ullam
+                distinctio, laborum nemo obcaecati corporis facilis aut doloribus voluptatibus. Qui nisi voluptates odio
+                nostrum sapiente, autem perspiciatis eaque doloribus odit praesentium necessitatibus maiores rerum
+                officiis accusamus id repellat molestiae similique nesciunt vero voluptatibus. Hic at eligendi eum
+                voluptatibus tempora nam est alias nihil excepturi vero?</p>
+        </div>
+        <div class="boxes">
+            <h1>Item 2</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, ratione obcaecati! Ipsum eaque id,
+                praesentium repudiandae a eos vero, ab similique ad explicabo fuga inventore magnam eum odio dolores
+                expedita quas et suscipit. Possimus placeat maxime voluptatum facilis fugit non eum assumenda cum
+                nesciunt facere? Rerum, architecto eligendi laboriosam, magni fugiat nesciunt sint ducimus ullam
+                distinctio, laborum nemo obcaecati corporis facilis aut doloribus voluptatibus. Qui nisi voluptates odio
+                nostrum sapiente, autem perspiciatis eaque doloribus odit praesentium necessitatibus maiores rerum
+                officiis accusamus id repellat molestiae similique nesciunt vero voluptatibus. Hic at eligendi eum
+                voluptatibus tempora nam est alias nihil excepturi vero?</p>
+        </div>
+        <div class="boxes">
+            <h1>Item 3</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, ratione obcaecati! Ipsum eaque id,
+                praesentium repudiandae a eos vero, ab similique ad explicabo fuga inventore magnam eum odio dolores
+                expedita quas et suscipit. Possimus placeat maxime voluptatum facilis fugit non eum assumenda cum
+                nesciunt facere? Rerum, architecto eligendi laboriosam, magni fugiat nesciunt sint ducimus ullam
+                distinctio, laborum nemo obcaecati corporis facilis aut doloribus voluptatibus. Qui nisi voluptates odio
+                nostrum sapiente, autem perspiciatis eaque doloribus odit praesentium necessitatibus maiores rerum
+                officiis accusamus id repellat molestiae similique nesciunt vero voluptatibus. Hic at eligendi eum
+                voluptatibus tempora nam est alias nihil excepturi vero?</p>
+        </div>
+        <div class="boxes">
+            <h1>Item 4</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo, ratione obcaecati! Ipsum eaque id,
+                praesentium repudiandae a eos vero, ab similique ad explicabo fuga inventore magnam eum odio dolores
+                expedita quas et suscipit. Possimus placeat maxime voluptatum facilis fugit non eum assumenda cum
+                nesciunt facere? Rerum, architecto eligendi laboriosam, magni fugiat nesciunt sint ducimus ullam
+                distinctio, laborum nemo obcaecati corporis facilis aut doloribus voluptatibus. Qui nisi voluptates odio
+                nostrum sapiente, autem perspiciatis eaque doloribus odit praesentium necessitatibus maiores rerum
+                officiis accusamus id repellat molestiae similique nesciunt vero voluptatibus. Hic at eligendi eum
+                voluptatibus tempora nam est alias nihil excepturi vero?</p>
+        </div>
+    </div>
+</body>
+
+</html>
