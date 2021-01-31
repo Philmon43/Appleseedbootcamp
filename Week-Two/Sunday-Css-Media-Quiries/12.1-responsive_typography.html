@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Quiries</title>
+    <style>
+        /* Smart phone view */
+        @media only screen and (max-width: 500px) {
+            p {
+                font-size: 20px;
+                color: orange;
+            }
+        }
+
+        /* tablet view */
+        @media(min-width: 501px) and (max-width: 678px) {
+            p {
+                font-size: 30px;
+                color: red;
+            }
+        }
+
+        /* noraml */
+        @media(min-width: 679px) and (max-width: 1024px) {
+            p {
+                font-size: 40px;
+                color: green;
+            }
+        }
+
+
+        /* landscape */
+        @media(min-width: 1025px) {
+            p {
+                font-size: 60px;
+                color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>AppleSeeds Bootcamp</p>
+</body>
+
+</html>
