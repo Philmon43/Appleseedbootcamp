@@ -17,7 +17,7 @@
     z-index: 3;
 }
 
-.section_one>.header>.logo,
+/* .section_one>.header>.logo,
 .section_one>.header>.navbar,
 .section_one li {
     float: left;
@@ -40,10 +40,32 @@
 .section_one>.header>.sidebar {
     float: right;
     text-align: right;
+} */
+
+.header{
+    text-align: center !important;
 }
 
+.header>div, .header>.navbar li,.header>.sidebar li{
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.header>.logo{
+    float: left;
+}
+
+.header>.sidebar{
+    float: right;
+}
+.burger{
+    border-top: 3px solid white;
+    margin-bottom: 1px;
+    width: 12px;
+}
 /* tesla logos */
 .section_one>.header>.logo img {
+    display: inline-block;
     width: 100px;
 }
 
@@ -401,11 +423,12 @@
     line-height: 25px;
 }
 
-.section_five_second_middle_map>img{
+.section_five_second_middle_map>img {
     width: 100%;
     padding: 10px 0;
 }
-.section_five_second_middle_lower{
+
+.section_five_second_middle_lower {
     position: relative;
     width: 100%;
     text-align: center;
