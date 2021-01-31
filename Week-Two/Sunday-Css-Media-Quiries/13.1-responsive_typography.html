@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.1-responsive_typography</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            background: #333 url("https://images.pexels.com/photos/6199963/pexels-photo-6199963.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 40vh;
+        }
+
+        .details,
+        .information {
+            position: relative;
+            text-align: center;
+        }
+
+        .details {
+            top: 50%;
+            color: white;
+            font-weight: bold;
+        }
+
+        @media(max-width: 678px) {
+            .details {
+                top: 50px;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+
+            p {
+                line-height: 30px;
+                font-size: 25px;
+                font-weight: lighter;
+            }
+
+            .information {
+                top: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="header">
+            <div class="details">
+                <h1>Lorem, ipsum dolor</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, praesentium.</p>
+            </div>
+        </div>
+        <div class="information">
+            <h1>Information</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus eaque, expedita possimus sequi
+                perferendis accusamus inventore at ducimus sed. Accusantium harum excepturi a aperiam ipsum quasi
+                aliquam veritatis dolor error.</p>
+        </div>
+    </div>
+</body>
+
+</html>
