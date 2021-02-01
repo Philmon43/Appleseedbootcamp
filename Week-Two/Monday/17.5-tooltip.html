@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.5-tooltip</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        margin: 0 auto;
+        height: 60vh;
+    }
+
+    span {
+        position: relative;
+        cursor: pointer;
+        font-weight: bold;
+        color: coral;
+    }
+
+    p {
+        line-height: 20px;
+    }
+
+    span:hover::before {
+        content: attr(data-toolip);
+        position: absolute;
+        background: lightyellow;
+        bottom: 20px;
+        padding: 2px 10px;
+        border: 1px solid #333;
+        border-radius: 5rem;
+        width: auto;
+        white-space: nowrap;
+        left: -10px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quis eaque <span
+                data-toolip="Real Badass Toolip">mollitia</span> ut cumque odio in molestiae quam iste! Sint quia ut
+            dolor quos asperiores excepturi! Sunt, alias sint. Commodi aliquam voluptatem sequi architecto. Ipsam,
+            eveniet? Non eaque excepturi, laborum cupiditate qui officia? Non quas at vero, ipsum sed saepe libero sit?
+            <span data-toolip="Whaat! :)">Corrupti</span> error quae a minima suscipit eaque fugit numquam eos
+            molestias, sint vero quaerat eius cupiditate, aspernatur doloribus, accusantium tempore eligendi? Et aliquam
+            ut dolorem minima ex. Harum rem molestiae sunt nemo esse corporis consequatur nihil modi alias iste
+            recusandae, quod voluptas dolores culpa, distinctio asperiores, maxime inventore illum ab ullam rerum
+            laborum? Quod repellendus, architecto sit nobis nostrum earum temporibus fugiat! Minima sint, dolores quae
+            libero fugit quia omnis laudantium laboriosam veniam quo labore, delectus nobis, nisi incidunt sed doloribus
+            aliquam! Ratione accusamus a molestias necessitatibus, unde, at ex hic asperiores inventore voluptate, sequi
+            id aspernatur vitae rem dolor. Reprehenderit possimus et ut voluptate aut sint totam accusantium, minima hic
+            blanditiis vero distinctio expedita? Qui magni reprehenderit sunt iste culpa consequuntur commodi minus
+            architecto, laborum omnis exercitationem laboriosam tempore. Eius cupiditate vitae laudantium delectus
+            deleniti eaque blanditiis. Dolorem aliquam temporibus non sed. Laborum sapiente cum a. Dicta.</p>
+    </div>
+</body>
+
+</html>
