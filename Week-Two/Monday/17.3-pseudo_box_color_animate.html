@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.3-pseudo_box_color_animate</title>
+</head>
+<style>
+     .box-1 {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background: lightcoral;
+    }
+
+    .box-1::before {
+        content: "";
+        position: absolute;
+        background: lightblue;
+        width: 50%;
+        height: 100%;
+    }
+</style>
+<body>
+    <div class="box-1"></div>
+</body>
+</html>
