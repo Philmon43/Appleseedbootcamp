@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.2-flex_basics-2</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* by giving the container of the boxes full view of the whole screen and  flex justify-content:center and align-items:center */
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: lightyellow;
+        width: 100vw;
+        height: 100vh;
+    }
+
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10rem;
+        height: 10rem;
+        margin: .5rem;
+    }
+
+    .box:nth-child(1) {
+        background: lightgreen;
+    }
+
+    .box:nth-child(2) {
+        background: lightcoral;
+    }
+
+    .box:nth-child(3) {
+        background: lightblue;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">box 1</div>
+        <div class="box">box 2</div>
+        <div class="box">box 3</div>
+    </div>
+</body>
+
+</html>
