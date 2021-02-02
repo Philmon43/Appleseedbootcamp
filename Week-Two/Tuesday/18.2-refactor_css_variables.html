@@ -5,7 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>18.2-refactor_css_variables</title>
 </head>
-<body>
+<style>
+    /* css variables */
     
+    :root{
+        --bgcolor:  lightgray;
+        --darcolor: #333
+    }
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        display: flex;
+        background: var(--bgcolor);
+        align-items: center;
+        color: var(--darcolor);
+        padding: 5px 10px;
+    }
+
+    .container>.title {
+        flex-grow: 1;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 10px;
+        color:var(--darcolor);
+    }
+
+    /* from tablet to smart fones */
+    @media only screen and (max-width: 678px) {
+
+        .container,
+        ul {
+            flex-grow: 0;
+            flex-direction: column;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h2>APPLESEEDS</h2>
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">CONTACT</a></li>
+
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>
