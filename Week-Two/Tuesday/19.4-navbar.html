@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19.4-navbar</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .conatiner {
+        background: yellow;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+    }
+
+    li::before {
+        content: "";
+        position: absolute;
+        width: 0%;
+        border-top: 2px solid black;
+        top: 0;
+        left: 0;
+    }
+
+    li::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        border-top: 2px solid black;
+        right: 0;
+        bottom: 0;
+    }
+
+    li:hover::before,
+    li:hover::after {
+        width: 100%;
+        transition: all 1s;
+    }
+</style>
+
+<body>
+    <div class="conatiner">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Service</li>
+            <li>Portfolio</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+</body>
+
+</html>
