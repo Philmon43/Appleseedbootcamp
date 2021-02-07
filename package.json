@@ -1,0 +1,23 @@
+{
+  "name": "appleseedsbootcamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Philmon43/Appleseedbootcamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Philmon43/Appleseedbootcamp/issues"
+  },
+  "homepage": "https://github.com/Philmon43/Appleseedbootcamp#readme",
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-plugin-react": "^7.22.0"
+  }
+}
