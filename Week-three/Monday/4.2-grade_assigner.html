@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.2-grade_assigner</title>
+</head>
+<body>
+    
+    <script>
+        const grade_assigner = (number) => {
+            if(number <= 64){
+                return "F"
+            }else if(number>= 65 && number <= 69){
+                return "D"
+            }else if(number>= 70 && number <= 79){
+                return "C"
+            }else if(number>= 80 && number <= 89){
+                return "B"
+            }else if(number>= 90 && number <= 100){
+                return "A"
+            }
+        }
+    </script>
+</body>
+</html>

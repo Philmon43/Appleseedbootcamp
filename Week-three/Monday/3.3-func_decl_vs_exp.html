@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.3-func_decl_vs_exp</title>
+</head>
+<body>
+    
+    <script>
+        function percentageOfWorld1(population){
+            const percent = (population / 7900000000) * 100;
+            return percent.toFixed(2)+"%";
+        }
+        console.log("China Population is", percentageOfWorld1(1441000000), " of the World");
+        console.log("India Population is", percentageOfWorld1(1366000000), " of the World");
+        console.log("Israel Population is", percentageOfWorld1(9050000), " of the World");
+
+        const percentageOfWorld2 = function(population){
+            const percent = (population / 7900000000) * 100;
+            return percent.toFixed(2)+"%";
+        }
+        console.log("Eritrea Population is", percentageOfWorld2(3546421), " of the World");
+        console.log("Finland Population is", percentageOfWorld2(5540720), " of the World");
+        console.log("Ethiopia Population is", percentageOfWorld2(114963588), " of the World");
+    </script>
+</body>
+</html>
