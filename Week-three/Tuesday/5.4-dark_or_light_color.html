@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.4-dark_or_light_color.pdf</title>
+</head>
+<body>
+    
+
+    <script>
+        const colors = (color) => {
+            switch(color){
+                case "yellow"  || "pink" || "orange":
+                    return "light color"
+                    break;
+                case  "blue" || "purple" || "brown":
+                    return "dark color"
+                    break;
+                default:
+                    return "Unknown color" 
+            }
+        };
+
+      console.log(colors("yellow"));
+    </script>
+</body>
+</html>

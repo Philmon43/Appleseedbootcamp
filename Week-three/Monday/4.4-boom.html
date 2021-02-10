@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4-boom.pdf</title>
+</head>
+
+<body>
+
+    <script>
+        const boom = (n) => {
+           for(let i=0; i<n;i++){
+               if(i%7==0){
+                   if(i.toString().includes(7)){
+                       console.log("Boom-Boom")
+                   }else{
+                       console.log("Boom")
+                   }
+               }else{
+                   console.log(i)
+               }
+           };
+        }
+        boom(70)
+    </script>
+</body>
+
+</html>
