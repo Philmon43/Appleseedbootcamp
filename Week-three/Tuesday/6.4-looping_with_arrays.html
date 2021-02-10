@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6.4-looping_with_arrays</title>
 </head>
+
 <body>
-    
+
     <script>
-        const populations = [1, 2, 3, 4];
+        const populations = [1439323776, 1380004385, 331002651, 273523615];
 
         const populationPercentages = (population) => {
             const percentages = [];
-            for(let i=0;i<population.length;i++){
-                percentages.push(population[i]);
+            for (let i = 0; i < population.length; i++) {
+                percentages.push(((population[i] / 7900000000) * 100).toFixed(2));
             }
+
+            return percentages;
         };
+
+        console.log(populationPercentages(populations))
     </script>
 </body>
+
 </html>
