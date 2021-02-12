@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.6-object_iteration</title>
+</head>
+<body>
+    
+
+    <script>
+        const object_iteration = (obj) => {
+            const newObj = {};
+            const array = Object.entries(obj);
+            for(let i=0;i<array.length;i++){
+                newObj[array[i][1]]=array[i][0];
+            };
+
+            return newObj;
+        }
+        console.log(object_iteration(me))
+    </script>
+</body>
+</html>
