@@ -126,6 +126,9 @@ html {
     margin-bottom: 1px;
     width: 12px;
 }
+.navbar_lower_lef>ul>li:hover{
+    outline: 1px solid white;
+}
 
 .navbar_lower_right p {
     cursor: pointer;
