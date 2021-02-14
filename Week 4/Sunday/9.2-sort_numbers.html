@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.2-sort_numbers</title>
+</head>
+
+<body>
+
+
+    <script>
+        const numbers = [1, -5, 666, 2, 400, 11];
+
+        const fromDescToAsc = numbers.slice(0, numbers.length).sort(function(a, b){return b-a});
+        const fromAsceToDesc = numbers.sort((a, b) => a-b);
+
+        console.log(fromDescToAsc);
+        console.log(fromAsceToDesc);
+    </script>
+</body>
+
+</html>

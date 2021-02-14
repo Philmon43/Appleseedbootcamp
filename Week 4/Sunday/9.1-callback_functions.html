@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.1-callback_functions</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 1. Write a a function called ‘isString’ that receives 2
+        // arguments, a string and a callback function.
+        // The function checks that the string is indeed a string.
+        // If the string is a string, pass the string to a callback
+        // function which logs that string to the console.
+        const callback = (str) => {
+            if (typeof str === "string") {
+                console.log(str)
+                return str
+            }
+        }
+        const isString = (str, callBack) => {
+            return callBack(str);
+        }
+
+        isString("hello", callback);
+
+
+        // 2. Create a function called ‘firstWordUpperCase’ that
+        // receives 2 arguments, a string and a callback function.
+        // The function will capitalize the first word in the sentence
+        // and pass the string to a callback function which will create
+        // dashes between the words.
+        const upper = (str) => {
+            const word = (str.charAt(0).toUpperCase() + str.slice(1)).split("").join("-");
+            console.log(word)
+            return word;
+        }
+
+        const firstWordupperCase = (word, upper) => {
+            return upper(word)
+        }
+
+        isString("hello", upper);
+
+
+        //3. Call the ‘firstWordUpperCase’ function with a callback of
+        // your choice.
+
+        const ifStringChangeChangeFirstLetterToUpperCase = (str, firstCall, secondCall) => {
+            if(firstCall(str)){
+                return secondCall(str)
+            }
+        }
+
+        
+        ifStringChangeChangeFirstLetterToUpperCase("appleseeds", callback, upper);
+
+    </script>
+</body>
+
+</html>

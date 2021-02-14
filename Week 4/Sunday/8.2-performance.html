@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.2-maps_vs_objects_performance</title>
+</head>
+<body>
+    
+
+    <script>
+        const myobject = {};
+        console.time("myObject-time");
+        for(let i=0;i<1000000;i++){
+            myobject[i] = i
+        }
+        console.timeEnd("myObject-time");
+
+        const myMaps = new Map();
+        console.time("myMaps-time")
+        for(let i=0;i<1000000;i++){
+            myMaps.set(i, i);
+        }
+        console.timeEnd("myMaps-time")
+    </script>
+</body>
+</html>
