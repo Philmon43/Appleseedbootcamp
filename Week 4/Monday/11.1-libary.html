@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.1-libary</title>
+</head>
+
+<body>
+
+    <script>
+        // Instructions
+        // Write a JavaScript function that receives the following library object as an
+        // input and displays the books that can be read (the reading status is true).
+        // Log the book name, author name and reading status .
+
+        var library = [{
+                author: "Bill Gates",
+                title: "The Road Ahead",
+                readingStatus: true
+            },
+            {
+                author: "Steve Jobs",
+                title: "Walter Isaacson",
+                readingStatus: true
+            },
+            {
+                author: "Suzanne Collins",
+                title: "Mockingjay: The Final Book of The Hunger Games",
+                readingStatus: false
+            }
+        ];
+
+        const booktoRead = library.filter(book => {
+            if (book.readingStatus) {
+                console.log(`author: ${book.author} \ntitle: ${book.title} \nstatus:${book.readingStatus}`)
+            }
+        });
+    </script>
+</body>
+
+</html>

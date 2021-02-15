@@ -28,11 +28,20 @@
             "hummus",
             "pizza with extra pineapple",
         ];
+        // const foodsWithUpperCaseSorted = foodsWithUpperCase.sort((a, b) => {
+        //     if (/(?<![A-Z])[A-Z](?![A-Z])/.test(a)) {
+        //         return -1
+        //     } else if (!/(?<![A-Z])[A-Z](?![A-Z])/.test(a)) {
+        //         return 1
+        //     } else {
+        //         return 0
+        //     }
+        // });
         const foodsWithUpperCaseSorted = foodsWithUpperCase.sort((a, b) => {
             if (/(?<![A-Z])[A-Z](?![A-Z])/.test(a)) {
-                return -1
-            } else if (!/(?<![A-Z])[A-Z](?![A-Z])/.test(a)) {
                 return 1
+            } else if (!/(?<![A-Z])[A-Z](?![A-Z])/.test(a)) {
+                return -1
             } else {
                 return 0
             }

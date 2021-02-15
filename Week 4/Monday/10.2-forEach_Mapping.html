@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.2-forEach_Mapping</title>
+</head>
+
+<body>
+
+
+    <script>
+        const newReleases = [{
+                id: 70111470,
+                title: "Die Hard",
+                boxart: "http://cdn-0.nflximg.com/images/2891/DieHard.jpg",
+                uri: "http://api.netflix.com/catalog/titles/movies/70111470",
+                rating: [4.0],
+                bookmark: [],
+            },
+            {
+                id: 654356453,
+                title: "Bad Boys",
+                boxart: "http://cdn-0.nflximg.com/images/2891/BadBoys.jpg",
+                uri: "http://api.netflix.com/catalog/titles/movies/70111470",
+                rating: [5.0],
+                bookmark: [{
+                    id: 432534,
+                    time: 65876586
+                }],
+            },
+            {
+                id: 65432445,
+                title: "The Chamber",
+                boxart: "http://cdn-0.nflximg.com/images/2891/TheChamber.jpg",
+                uri: "http://api.netflix.com/catalog/titles/movies/70111470",
+                rating: [4.0],
+                bookmark: [],
+            },
+            {
+                id: 675465,
+                title: "Fracture",
+                boxart: "http://cdn-0.nflximg.com/images/2891/Fracture.jpg",
+                uri: "http://api.netflix.com/catalog/titles/movies/70111470",
+                rating: [5.0],
+                bookmark: [{
+                    id: 432534,
+                    time: 65876586
+                }],
+            },
+        ];
+        // Instructions
+        // Answer the questions below and use the map or the
+        // forEach method:
+
+        // 1. Write a
+        // function called doubleValues which accepts an
+        // array and returns a new array with all the values in the
+        // array passed to the
+        // function doubled.
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        const colors = ["Orange", "Green", "Black", "Purple"];
+        const string = "supercalifragilisticexpialidocious";
+        const doubleValues = numbers.map((single) => single + single)
+        console.log(doubleValues)
+
+        // 2. Write a
+        // function called onlyEvenValues which accepts an
+        // array and returns a new array with only the even values in
+        // the array passed to the function.
+        const onlyEvenValues = []
+        numbers.forEach((num) => {
+            if (num % 2 == 0) return onlyEvenValues.push(num)
+        });
+        console.log(onlyEvenValues)
+
+        // 3. Write a function called showFirstAndLast which accepts
+        // an array as an argument and returns a new array with only
+        // the first and last elements from the
+        // function’ s argument
+        // array.The returned array should only contain elements that
+        // are strings.
+        const showFirstAndLast = 0;
+
+        // 4. Write a function called vowelCount which accepts a
+        // string as an argument. The function should return an object
+        // which has the count of the number of vowel’s that are in
+        // the string. The key should be the vowel and the value
+        // should be the count. e.g. {a:3, o:2,u:4}.
+        // Should not be case sensitive.
+        const vowelCount = {};
+
+        string.split("") // spliting to array 
+            .map(l => (/[aeiou]/.test(l) ? l : false)) // will return new array of letters with only the vowels
+            .forEach(l => {
+                if (l) {
+                    return !vowelCount.hasOwnProperty(l) ? vowelCount[l] = 1 : vowelCount[l]++
+                }
+            });
+        console.log(vowelCount)
+
+        // 5. Write a function capitalize that takes a string as an
+        // argument and will return the whole string capitalized.
+        const capitalize = string.split("")
+            .map(l => l.toUpperCase())
+            .join("");
+
+        console.log(capitalize)
+
+
+        // 6. Write a function called shiftLetters that takes a string as
+        // an argument and return’s an encoded string with each
+        // letter shifted down the alphabet by one.
+
+        const shiftLetters = string.split("")
+            .map(l => l.toLocaleLowerCase() == "a" ? "z" : String.fromCharCode(l.charCodeAt(0) - 1))
+            .join("")
+
+        console.log(shiftLetters)
+
+
+        // 7. Create a function called swapCase that takes a string as
+        // an argument and returns a string that every other word is
+        // capitalized. (you can use the fifth’s exercise's function to
+
+        const swapCase = 0;
+    </script>
+</body>
+
+</html>
