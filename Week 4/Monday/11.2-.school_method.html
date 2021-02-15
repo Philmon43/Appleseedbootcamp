@@ -11,71 +11,90 @@
 <body>
     <script>
         const school = {
-                teachers: [{
-                        id: 1,
-                        name: "Pinchas",
-                        subjects: ["chemistry", "biology", "physics"],
-                        students: [],
-                        capacityLeft: 3,
-                    },
-                    {
-                        id: 2,
-                        name: "Williams",
-                        subjects: ["history", "ethics"],
-                        students: [],
-                        capacityLeft: 2,
-                    },
-                ],
-                students: [{
-                        id: 10,
-                        name: "Jennifer",
-                        age: 20,
-                    },
-                    {
-                        id: 11,
-                        name: "Howard",
-                        age: 23,
-                    },
-                    {
-                        id: 12,
-                        name: "Old-Timmy",
-                        age: 86,
-                    },
-                    {
-                        id: 13,
-                        name: "Houston",
-                        age: 21,
-                    },
-                ],
-            }
+            teachers: [{
+                    id: 1,
+                    name: "Pinchas",
+                    subjects: ["chemistry", "biology", "physics"],
+                    students: [],
+                    capacityLeft: 3,
+                },
+                {
+                    id: 2,
+                    name: "Williams",
+                    subjects: ["history", "ethics"],
+                    students: [],
+                    capacityLeft: 2,
+                },
+            ],
+            students: [{
+                    id: 10,
+                    name: "Jennifer",
+                    age: 20,
+                },
+                {
+                    id: 11,
+                    name: "Howard",
+                    age: 23,
+                },
+                {
+                    id: 12,
+                    name: "Old-Timmy",
+                    age: 86,
+                },
+                {
+                    id: 13,
+                    name: "Houston",
+                    age: 21,
+                },
+            ],
+            findPerson: function (type, id) {
+                return this[type].find((el) => el.id === id);
+            },
+            assignStudent: function (studentId, subject) {
+                const student = this.students.find(stud => stud.id === studentId)
+                const availableTeacher = this.teachers.find(teacher => teacher.subjects.includes(subject) 
+                &&teacher.capacityLeft > 0);
+                if (availableTeacher) {                      //if teacher have available space
+                    availableTeacher.students.push(student) // add student
+                    &&availableTeacher.capacityLeft--       //decrees availablity each time by one
+                    &&console.log("Available Teacher: ", availableTeacher); 
+                } else {
+                    console.log("Sorry, no available teachers left") // full capacity 
+                }
+            },
+            assignTeachersSubject: function (teacherId, newSubject) {
+                const teacher = this.findPerson("teachers", teacherId);
+                !teacher.subjects.includes(newSubject) && teacher.subjects.push(newSubject) || null
+            },
+        }
 
-            // Take the school object and create the following methods to
-            // that object:
-            
-            // 1. A method called “findPerson” that takes two arguments,
-            // a type (either a student or teacher), and an id.
-            // It will return a particular object of that person.
+        // Take the school object and create the following methods to
+        // that object:
 
-            const findPerson = (type, id) => {
-                return school[type].find((person) => person.id === id);
-            }
-            console.log(findPerson("teachers", 1))
+        // 1. A method called “findPerson” that takes two arguments,
+        // a type (either a student or teacher), and an id.
+        // It will return a particular object of that person.
+        console.log(school.findPerson("teachers", 2));
+        // 2. A method called “assignStudent” that takes two
+        // arguments, a student’s id and a subject.Assign all of the students to the first available teacher who
+        // teaches that subject and who is not in full capacity. If all ofthe teachers are in full capacity log to the console 
+        //“Sorry, no available teachers left”.
+        school.assignStudent(10, "chemistry")
+        school.assignStudent(11, "biology");
+        school.assignStudent(12, "chemistry");
+        school.assignStudent(12, "chemistry");
+        school.assignStudent(13, "history");
+        school.assignStudent(13, "ethics");
+        school.assignStudent(14, "ethics");
+        //3. A method called “assignTeachersSubject” that takes two arguments, the teacher’s id, a new subject. 
+        //Assign the new subject to that particular teacher if that subject doesn’t exist in their array of subjects
+        school.assignTeachersSubject(1, "biology"); // subjects that are allready there
+        school.assignTeachersSubject(1, "math");//new subject
+        school.assignTeachersSubject(1, "");//new subject
+        console.log(school.findPerson("teachers", 1));//log teacher info
 
-            // 2. A method called “assignStudent” that takes two
-            // arguments, a student’s id and a subject.Assign all of the students to the first available teacher who
-            // teaches that subject and who is not in full capacity. If all ofthe teachers are in full capacity log to the console “Sorry,
-            // no available teachers left”.
 
-
-            //3. A method called “assignTeachersSubject” that takes two arguments, the teacher’s id, a new subject. 
-            //Assign the new subject to that particular teacher if that subject doesn’t exist in their array of subjects
-
-
-
-            //4. Create a new method of anything you want.
-
-
-
+        //4. Create a new method of anything you want.
     </script>
 </body>
 
