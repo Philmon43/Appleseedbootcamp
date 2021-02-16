@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.1-get_sum</title>
+</head>
+
+<body>
+
+
+    <script>
+        // What is wrong with this code?
+        // 1. First find the line that contains the problem. Write it down.
+        // 2. Which debug method did you use to find the bug?
+        // 3. Explain the bug in your own words.
+        // 4. Fix the code and submit it all
+
+        
+        function getSum(arr1, arr2) {
+            let sum = 0; // const sum = 0; constant variable can't be reassighned
+            for (let i = 0; i < arr1.length; i++) {
+                sum += arr1[i];
+            }
+            for (let i = 0; i < arr2.length; i++) {
+                sum += arr2[i];
+            }
+
+            return sum; // need to return the result in order the function to work properly
+        }
+        console.log(getSum([1, 2, 3],[5, 66, 23])) // need commas between arguments if is function needs more than  one parameters
+    </script>
+</body>
+
+</html>

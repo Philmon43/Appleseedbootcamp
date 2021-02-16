@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.3-compare_two_arrays</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Create a function that takes these two arrays as
+        // arguments.
+        // Compare these two arrays using 2 for loops and return the
+        // items that are the same. If none are the same return false.
+        const food = ["Noodle", "Pasta", "Ice-cream", "Meat", "Cucumber", "Olives", "Hamburgers"];
+        const food1 = ["Fries", "Ice-cream", "Pizza", "Olives"];
+
+        const isHasSamevalue = (arr1, arr2) => {
+            const result = []
+            for (const food1 of arr2) {
+                for (const food of arr1) {
+                    if (food1 === food) {
+                        result.push(food1)
+                    }
+                }
+            };
+            return result
+        };
+
+        const result = isHasSamevalue(food, food1)
+        console.log(result)
+    </script>
+</body>
+
+</html>

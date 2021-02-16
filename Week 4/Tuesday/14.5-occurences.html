@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14.5-occurences</title>
+</head>
+<style>
+    body{
+        height: 100vh;
+    }
+    div+span{
+        background: red;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<body>
+    <div>
+        <span>before div</span>
+        <div>
+            <span>selam do kemey ke<span>hello</span></span>
+        </div>
+        <span>after div</span>
+    
+    </div>
+   
+
+    <script>
+        function countOccurrences(str, char) {
+            // debugger
+            let counter = 0;
+            for (let i = 0; i < str.length; i++) {
+                if (str.charAt(i) === char) {
+                    // counter + 1; 
+                    // i use google chrome debugger 
+                    //its increamenting but not assighning to anything
+                    counter += 1;
+                }
+            }
+            return counter;
+        }
+        countOccurrences("ini mini miny moe", "n");
+    </script>
+</body>
+
+</html>
