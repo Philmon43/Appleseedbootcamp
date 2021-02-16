@@ -51,9 +51,9 @@
                 return this[type].find((el) => el.id === id);
             },
             assignStudent: function (studentId, subject) {
-                const student = this.students.find(stud => stud.id === studentId)
+                const student = this.findPerson("students", studentId);
                 const availableTeacher = this.teachers.find(teacher => teacher.subjects.includes(subject) 
-                &&teacher.capacityLeft > 0);
+                &&teacher.capacityLeft);
                 if (availableTeacher) {                      //if teacher have available space
                     availableTeacher.students.push(student) // add student
                     &&availableTeacher.capacityLeft--       //decrees availablity each time by one
@@ -75,6 +75,7 @@
         // 1. A method called “findPerson” that takes two arguments,
         // a type (either a student or teacher), and an id.
         // It will return a particular object of that person.
+        console.log(school.findPerson("teachers", 1));
         console.log(school.findPerson("teachers", 2));
         // 2. A method called “assignStudent” that takes two
         // arguments, a student’s id and a subject.Assign all of the students to the first available teacher who
