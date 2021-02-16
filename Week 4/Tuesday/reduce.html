@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reduce function</title>
 </head>
+
 <body>
-    
-    
+
+    <script>
+        const numbers = [4, 4, 4, 5];
+        // Write the following functions using the reduce built-in function.
+        // 1. max
+
+        function maxNumber(a, b){
+            let max = a > b? a : b;
+            return max
+        }
+
+        const max = numbers.reduce(maxNumber, 0);
+        console.log(`the maximum number of:  '[${numbers}]' is: ${max}`);
+        // 2. sum of even numbers
+        function sumOfEven(a, b) {
+            if(b%2==0){
+                return a + b
+            }else{
+                return a
+            }
+        }
+        const sumOfEvenNumbers = numbers.reduce(sumOfEven, 0);
+        console.log(`the sum of even numbers sudly they are all even :) - '[${numbers}]' is: ${sumOfEvenNumbers}`);
+        // 3. average
+        function average(a, b, i , array){
+           return a + b / array.length;
+        }
+
+        const averageOfArrayNumbers = numbers.reduce(average, 0);
+        console.log(`the average of ->'[${numbers}]' is: ${averageOfArrayNumbers}`);
+
+    </script>
 </body>
+
 </html>
