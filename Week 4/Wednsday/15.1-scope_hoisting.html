@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.1-scope_hoisting</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Instructions
+        // Without running the code below, explain in your own words what the result
+        // of each block of code will be and why.
+        // If there are any faulty outputs, please write on how we can fix them.
+
+
+
+        // fuction funcA at first console.log(a) is undefined its defined but no value (undefined) 
+        // but function foo() will work becaus of hoisting
+        // we can change only the var a to declare it first
+        //and i think hosting wor on function declaration only i think
+
+        function funcA() {
+            var a = 1;
+            console.log(a);
+            console.log(foo());
+            //var a = 1; not allowed or undefined
+            function foo() {
+                return 2;
+            }
+        }
+        funcA();
+
+
+
+        // Block 2
+        var fullName = 'John Doe';
+        var obj = {
+            fullName: 'Colin Ihrig',
+            prop: {
+                fullName: 'Aurelio De Rosa',
+                getFullName: function () {
+                    return this.fullName;
+                }
+            }
+        };
+        console.log(obj.prop.getFullName());
+        //this will print "Aurelio De Rosa" because of the this, this keyword look its creator in this case the 'prop' object 
+        var test = obj.prop.getFullName;
+        console.log(test());
+        //thus will print 'John Doe' bc its a callback and its assigned to global variable "test" and thus keyword will look its creater the global scope
+
+        //block 3
+        function funcB() {
+            let a = b = 0;
+            a++;
+            return a;
+        }
+        funcB();
+        console.log(typeof a);
+        //a is local variable only accessed inside the funcB()  in this case its undefined
+        //but inside the funcB() a is b so a is also a number
+        console.log(typeof b);
+        //b is a global variable automatically by JavaScript so it can be accessed from outside in this case it is a number
+
+        //block 4
+        function funcC() {
+            console.log("1");
+        }
+        funcC();
+
+        function funcC() {
+            console.log("2"); // no idea at all i think you cat name two function the same
+        }
+        funcC();
+
+
+        //Block 5
+        function funcD1() {
+            d = 1;
+        }
+        funcD1();
+        console.log(d);
+        // this will work right bc of we arecalling the function and the function is auto assigning 
+        //to the global 
+
+        function funcD2() {
+            var e = 1;
+        }
+        funcD2();
+        // console.log(e);
+        //and here the opposite funcD1() bc var is function scoped so it will not print may be error
+
+        function funcE() {
+            console.log("Value of f in local scope: ", f); 
+        }
+        // will work bc hoisting this will make the varibale to go app or the function to go down
+        console.log("Value of f in global scope: ", f);// not yet defined
+        var f = 1;
+        funcE();
+    </script>
+</body>
+
+</html>

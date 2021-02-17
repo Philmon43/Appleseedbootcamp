@@ -26,14 +26,13 @@
             }
             for (let i = 0; i < n; i++) {
                 for (let x = result.length; x < n; x++) {
-                    if (result.includes("#")) {
-                        result += " "
-                    } else {
-                        result += "#"
+                    if(i>x){
+                        result+=" "
+                    }else{
+                        result+="#"
                     }
                 }
-                
-                console.log(result, i);
+                console.log(result);
             }
         };
 
