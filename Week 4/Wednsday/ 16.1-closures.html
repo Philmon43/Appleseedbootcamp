@@ -44,11 +44,12 @@
 
         let i;
         for (i = 0; i < 3; i++) {
-            // debugger
+            debugger
             const log = () => {
                 console.log(i);
             }
-            setTimeout(log(), 100);
+            setTimeout(log, 100);
+            // console.log(i)
         }
         //the set time out is working as father closure returning what ever the result after 100 millisecond in this case 3 is the result
         //try  setTimeout(log(), 100); 
