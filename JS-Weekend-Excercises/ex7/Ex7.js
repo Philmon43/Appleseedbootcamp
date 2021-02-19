@@ -5,18 +5,28 @@
 // - Map
 // Using only for(), array and objects (without other js methods)
 
-//filter
-Array.prototype.filtero = function (callback, context) {
-    let arr = [];
-    for (var i = 0; i < this.length; i++) {
-        if (callback.call(context, this[i], i, this))
-            arr.push(this[i]);
-    }
-    return arr;
-};
 
-let  numbers = [1, 20, 30, 80, 2, 9, 3];
-let  newNum = numbers.myFilter(function (n) {
-    return n >= 10;
-});
-console.log(newNum);
+//test
+
+let arr = [1, 2, 3, 4, 5];
+//filter
+
+let filter = []
+for(let i = 0; i < arr.length; i++){
+    if(arr[i] < 4){
+        filter.push(arr[i])
+    }
+}
+console.log(filter)
+
+//foreach
+for(let i = 0; i < arr.length; i++){
+   console.log(arr[i])
+}
+
+//map
+let map = []
+for(let i = 0; i < arr.length; i++){
+    map.push(arr[i]+arr[i])
+ }
+ console.log(map)
