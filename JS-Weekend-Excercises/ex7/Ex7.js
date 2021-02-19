@@ -30,3 +30,6 @@ for(let i = 0; i < arr.length; i++){
     map.push(arr[i]+arr[i])
  }
  console.log(map)
+
+
+ 
