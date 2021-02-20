@@ -20,12 +20,8 @@ const toWeirdCase = (string) => {
             return a
         }).join("")
     }
-
-    for (let i = 0; i < string.split(" ").length; i++) {
-        result = toWeirdL(string.split(" ")[i]) + ' ' + result;
-    }
-
-    return result
+    for (let i = 0; i < string.split(" ").length; i++) result = result + ' ' + toWeirdL(string.split(" ")[i])
+    return result.trim()
 }
 
 
