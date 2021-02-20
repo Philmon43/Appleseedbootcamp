@@ -13,9 +13,14 @@
 // "####################################man!"
 
 const maskify = (str) => {
-    return "#".repeat(str.length-4)+([...str].splice(str.length-4, str.length-1).join(""))
+    if (str.length < 5) return str
+    return "#".repeat(str.length - 4) + ([...str].splice(str.length - 4, str.length - 1).join(""))
 }
 
 
 console.log(maskify("4556364607935616"))
+console.log(maskify("111"))
+console.log(maskify("1111"))
+console.log(maskify("11111"))
+console.log(maskify("1"))
 console.log(maskify("Nananananananananananananananana Batman!"))
