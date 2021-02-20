@@ -12,22 +12,20 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
+// {
+//     if(b>1){
+//         a++
+//     }
+//     return a
+// }
+
 const countingDublicates = (str) => {
     const obj = [...str.toLowerCase()].reduce((a, b) => {
         a[b] = a[b] + 1 || 1
         return a
     }, {})
-
-    return (() => {
-        // eslint-disable-next-line no-unused-vars
-        for (const [key, value] of Object.entries(obj)) {
-            if (value > 0) {
-                return value
-            } else {
-                return 0
-            }
-        }
-    })()
+    return Object.entries(obj).filter(a => a[1] > 1).length;
 }
 
+console.log(countingDublicates("Indivisibility"))
 console.log(countingDublicates("Indivisibilities"))
