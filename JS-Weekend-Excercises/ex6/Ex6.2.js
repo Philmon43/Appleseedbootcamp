@@ -20,11 +20,13 @@
 // }
 
 const countingDublicates = (str) => {
-    const obj = [...str.toLowerCase()].reduce((a, b) => {
-        a[b] = a[b] + 1 || 1
-        return a
-    }, {})
-    return Object.entries(obj).filter(a => a[1] > 1).length;
+    // const obj = [...str.toLowerCase()].reduce((a, b) => {
+    //     a[b] = a[b] + 1 || 1
+    //     return a
+    // }, {})
+    // return Object.entries(obj).filter(a => a[1] > 1).length;
+
+    return Object.entries([...str.toLowerCase()].reduce((a, b) => (a[b] = a[b] + 1 || 1, a), {})).filter(a => a[1] > 1).length;
 }
 
 console.log(countingDublicates("Indivisibility"))
