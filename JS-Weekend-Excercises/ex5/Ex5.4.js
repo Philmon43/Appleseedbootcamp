@@ -9,13 +9,23 @@
 // toWeirdCase( "String" );//=> returns "StRiNg"
 // toWeirdCase( "Weird string case" );//=> returns "WeIrD StRiNg CaSe"
 
-const toWeirdCase = (str) => {
-    return [...str].map((a, i) => {
-        if((i+2) % 2 == 0){
-            return a.toUpperCase()
-        }
-        return a
-    }).join("")
+const toWeirdCase = (string) => {
+    let result = ''
+
+    function toWeirdL(str) {
+        return [...str].map((a, i) => {
+            if (((i + 2) + 2) % 2 == 0) {
+                return a.toUpperCase()
+            }
+            return a
+        }).join("")
+    }
+
+    for (let i = 0; i < string.split(" ").length; i++) {
+        result = toWeirdL(string.split(" ")[i]) + ' ' + result;
+    }
+
+    return result
 }
 
 
