@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.2-text_area</title>
+</head>
+<style>
+</style>
+
+<body>
+
+    <h2>why are you interested in this position</h2>
+    <textarea class="text_area" cols="30" rows="10"></textarea>
+    <button class="btn" style="display: block;">Click here!</button>
+    <script>
+        // The following exercise contains the following subjects:
+        //  the dom
+        // Instructions
+        // Create a webpage that has part of an application process for a job.
+        // This page should have a text area field and a button. Your user must enter at
+        // least 100 characters before clicking the button. If he didn’t, please give him
+        // the appropriate message. (using alert is forbidden)
+
+        document.querySelector(".btn").addEventListener("click", () => {
+            const textArea = document.querySelector(".text_area").value.length;
+            if(textArea<100){
+                alert("forbidden must enter at least 100 characters before clicking");
+            }
+            console.log(textArea)
+        })
+    </script>
+</body>
+
+</html>
