@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,14 @@
     <title>18.1-smiley</title>
 </head>
 <style>
-    .conatiner{
+    .conatiner {
         display: grid;
         grid-template-rows: 1fr 1fr;
         justify-content: center;
         align-items: center;
     }
 </style>
+
 <body>
     <div class="conatiner">
         <div class="search" style="position: absolute; display: flex;justify-content: center;width:100%">
@@ -21,21 +23,23 @@
             <button class="btn">search</button>
         </div>
         <div class="smiley">
-            
+
         </div>
     </div>
     <script>
         document.querySelector(".btn").addEventListener("click", () => {
-            const  input = parseInt( document.querySelector(".input").value)
+            const input = parseInt(document.querySelector(".input").value)
             const smiley = document.querySelector(".smiley")
             smiley.innerHTML = ""
-            const html = `<img src="https://i.pinimg.com/564x/75/92/29/75922926b8d2867552fc43d0f41ca7db.jpg" width="50px" alt="smiley" style="position: relative; top: 30px">`
+            const html =
+                `<img src="https://i.pinimg.com/564x/75/92/29/75922926b8d2867552fc43d0f41ca7db.jpg" width="50px" alt="smiley" style="position: relative; top: 30px">`
             let counter = 0
-            while(counter<input){
+            while (counter < input) {
                 smiley.insertAdjacentHTML("beforeend", html);
-               counter++
+                counter++
             }
         })
     </script>
 </body>
+
 </html>
