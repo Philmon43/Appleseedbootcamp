@@ -9,11 +9,67 @@
 </head>
 
 <body>
-    <div style="background-color: red;">
-
-    </div>
     <script>
-        const document = document
+        const body = document.querySelector("body");
+        const css = `.card {
+            width: 400px;
+            margin: auto;
+            background-color: #333;
+            border-radius: 12px;
+            font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .card .card_image img {
+            width: 100%;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .card_info {
+            padding: 0px 10px 10px 10px;
+            color: white;
+        }
+
+        .card_info h4 {
+            font-size: 20px;
+            font-weight: bold;
+        }`
+
+        const style = document.createElement("style")
+        style.textContent = css;
+        //card    
+        const card = document.createElement("div")
+        card.className = "card"
+        body.appendChild(card)
+        //card container
+        const card_image = document.createElement("div")
+        card_image.className = "card_image"
+
+        //card container > image   
+        const img = document.createElement("img")
+        img.src = "./coding.jpg";
+        img.alt = "card"
+
+        //card_info
+        const card_info = document.createElement("div")
+        card_info.className = "card_info";
+        //card_info > h4
+        const h4 = document.createElement("h4");
+        h4.innerHTML = "Basic types of HTML tags"
+
+        //paragraph
+        const p = document.createElement("p")
+        p.innerHTML = "learn about some of the mostcommon HTML tags"
+
+        body.previousElementSibling.appendChild(style)
+        card.appendChild(card_image)
+        card.appendChild(card_info)
+        card_image.appendChild(img)
+        card_info.appendChild(h4)
+        card_info.appendChild(p)
+
+
+        console.log(document)
     </script>
 </body>
 

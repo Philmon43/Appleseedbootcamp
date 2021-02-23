@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19.2-copy mulitple inputs</title>
+</head>
+<style>
+    .conatiner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+
+    input {
+        width: 50px;
+        height: 50px;
+        margin: 0 5px;
+        padding: 5px;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <h1>Your code id: </h1>
+    <div class="conatiner">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <button>Submit</button>
+    </div>
+
+    <script>
+        const parent = document.querySelector(".conatiner");
+        const isInputFull = (obj) => {
+            let result = ""
+            for (let i = 0; i < obj.length - 1; i++) {
+                if (obj[i].value !== "") {
+                    result += obj[i].value
+                    i < obj.length - 2 ? obj[i + 1].focus() : obj[i].blur()
+                }
+            }
+            return result.length === obj.length - 1 ? result : null
+        }
+
+
+        parent.addEventListener("keyup", () => {
+            if (isInputFull(parent.children)) {
+                document.querySelector("h1").insertAdjacentText("beforeend", isInputFull(parent.children));
+            }
+        });
+    </script>
+</body>
+
+</html>
