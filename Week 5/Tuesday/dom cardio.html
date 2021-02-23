@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom cardio</title>
+</head>
+
+<body>
+
+
+    <script>
+        const body = document.querySelector("body")
+        // Make a div
+        const wrapper = document.createElement("div");
+        // add a class of wrapper to it
+        wrapper.classList.add("wrapper")
+
+        // put it into the body
+        body.appendChild(wrapper)
+        // make an unordered list
+        const ul = `<ul>
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>`
+        // add three list items with the words "one, two, three" in them
+        // put that list into the above wrapper
+        wrapper.innerHTML = ul
+        // create an image
+        const img = document.createElement("img");
+        // set the source to an image
+        img.src =
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=640:*"
+        // set the width to 250
+        img.width = 250
+        // add a class of cute
+        img.classList.add("cute")
+        // add an alt of Cute Puppy
+        img.alt = "Cute Puppy"
+        // Append that image to the wrapper
+        wrapper.appendChild(img)
+
+        // with HTML string, make a div, with two paragraphs inside of it
+        const div = `<div>
+                        <p>paragraph one</p>
+                        <p>paragraph two</p>
+                    </div>`
+
+        // put this div before the unordered list from above
+        const myUl = document.querySelector("ul");
+        myUl.insertAdjacentHTML("beforebegin", div);
+        // add a class to the second paragraph called warning
+        myUl.previousElementSibling.lastElementChild.classList = "warning"
+        // remove the first paragraph
+        myUl.previousElementSibling.firstElementChild.remove()
+        // create a function called generatePlayerCard that takes in three arguments: name, age, and height
+        const generatePlayerCard = (name, age, height) => {
+            // have that function return html that looks like this:
+            // <div class="playerCard">
+            //   <h2>NAME — AGE</h2>
+            //   <p>They are HEIGHT and AGE years old. In Dog years this person would be AGEINDOGYEARS. That would be a tall dog!</p>
+            // </div>
+
+            return `
+            <div class="playerCard">
+                <h2>${name} — ${age}</h2>
+                <p>They are ${height} and ${age} years old. In Dog years this person would be ${age*7}. That would be a tall dog!</p>
+            </div>
+            
+            `
+        }
+
+        // make a new div with a class of cards
+        const newDive = document.createElement("div")
+        newDive.classList.add("cards")
+        // make 4 player cards using generatePlayerCard
+        let fourCards = generatePlayerCard("philmon", 29, 176)
+        fourCards += generatePlayerCard("john", 03, 180)
+        fourCards += generatePlayerCard("doe", 31, 185)
+        fourCards += generatePlayerCard("smith", 40, 180)
+        // append those cards to the div
+        newDive.innerHTML = fourCards
+        // put the div into the DOM just before the wrapper element
+        body.appendChild(newDive)
+        // Bonus, put a delete Button on each card so when you click it, the whole card is removed
+
+        // select all the buttons!
+        // make out delete function
+        // loop over them and attach a listener
+
+        console.log(body)
+    </script>
+</body>
+
+</html>
