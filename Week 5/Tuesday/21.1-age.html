@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21.1-age</title>
+</head>
+
+<body>
+
+    <input type="nu" placeholder="How old are you"><button>submit</button>
+    <h1></h1>
+    <script>
+        //         The following exercise contains the following subjects:
+        //  events
+        // Instructions
+        // Create a webpage that has an input field for the user’s age and a button.
+        // If the user enters a number above 18, make the text “you can drink appear”.
+        // If the user enters a number below 18, make the text “you’re too young”
+        // appear.
+        //  
+        const canDrink = () => {
+            const h1 = document.querySelector("h1")
+            const input = parseInt(document.querySelector("input").value);
+            return input > 18 ? h1.textContent = "You can drink" : h1.textContent = "you’re too young"
+        }
+        document.querySelector("button").addEventListener("click", canDrink);
+    </script>
+</body>
+
+</html>
