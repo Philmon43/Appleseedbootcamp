@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26.1</title>
+</head>
+
+<body>
+    <button class="element">click</button>
+    <script>
+        //         Question 1:
+        // In your own words what will this point to and why?(Note
+        // this is the global scope)
+        //
+
+        //my answer
+        //this will refer to the window object bc this in this case the this keyword belong to window or global object
+        console.log(this.me);
+
+        //         Question 2:
+        // a. In your own words what will this point to and why.
+        // b. How can you fix this code
+
+        const myObj = {
+            name: "Timmy",
+            // greet: () => {
+            //     console.log(`Hello ${this.name}`);
+            // },
+            greet: function () {
+                console.log(`Hello ${this.name}`);
+            }
+        };
+        //my answer
+        //in this case the This keyword is unreachable becase of arrow function lexical scoping can be fix by using normal function
+        myObj.greet();
+
+        //         Question 3:
+        // In your own words what will this point to and why?
+        const myFuncDec = function () {
+            console.log(this);
+        };
+        myFuncDec()
+        //Question 3: answer
+        // in this case the this refers to the global object us i see see this key word belongs to the object its been called.
+
+        // // Question 4:
+        // In your own words what will this point to and why?
+        // const me = new Object({name: "philmon"})
+        const myFuncArrow = () => {
+            console.log(this);
+        };
+        myFuncArrow();
+        ///Question 4: answer
+        //in general in function this keyword refers to the global object but in arrow function bc of lexical scoping this will be disabled 
+        //need to see more refernces too its a little complicated for me
+
+        // // Question 5:
+        // // a. In your own words what will this point to and why.
+        // // b. How can you fix this code.
+
+        // document.querySelector(".element").addEventListener(() => {
+        //  console.log(this);
+        // });
+
+        // Question 5: my answer
+        document.querySelector(".element").addEventListener("click",function(){
+         console.log(this);
+        });
+
+        //this will be error there is no elemnt and there is no event to listen
+        //using normal function and listneing for  a click
+        //this will listen click on its caller object in this case it will return the element form querySelector object
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30.2-promise_chaining</title>
+</head>
+
+<body>
+
+    <script>
+        //         Instructions
+        // Write two functions that use Promises that you can chain.
+        // The first function, makeAllCaps(), will take in an array of words and capitalize
+        // them, and then the second function, sortWords(), will sort the words in
+        // alphabetical order. If the array contains anything but strings, it should throw
+        // an error.
+        // Call the functions once with an array of words and call it once with an array
+        // that includes at least one item that is not a word. Print the resolve and reject
+        // in a .then, .catch.
+        const arr = ["appleseeds", "programmer", "students"]
+        const result = []
+        const makeAllCaps = (words) => {
+            const promise = new Promise((resolve, reject) => {
+                if (words.length > 0) {
+                    const res = words.map(a => a.charAt(0).toUpperCase() + a.split("").splice(1, a.length -
+                        1).join(""))
+                    return resolve(res)
+                }
+                reject()
+            });
+            return promise
+        }
+
+        const sortWords = () => {
+            return makeAllCaps(arr)
+                .then(res => {
+                    if(Array.isArray(res)){
+                       console.log(res.sort())
+                    }
+                })
+                .catch(e => e)
+        }
+        sortWords()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27.2-pokeman</title>
+</head>
+
+<body>
+
+    <script>
+        //         You are given a function, Pokeman, that takes three parameters,
+        // pokemonName, pokemonType, an array of different pokemon attack methods,
+        // pokemonAttackList.
+        // 1. Create three instances of the Pokemon and save them in a variable.
+        // 2. Using prototype properties, add the following methods:
+        // • A method called callPokemon that will print the following: “I choose
+        // you, <pokemon name>
+        // • A method called attack that takes one parameter, an attack number,
+        // that will print the specific attack method from the pokemonAttackList
+        // array as the following: “<pokemon name> used <attack method>”
+        // Call each pokemon with the 2 methods you created.
+        // Here is the Pokemon function:
+        // Submit your answer to Hive.
+
+        function Pokemon(pokemonName, pokemonType, pokemonAttackList) {
+            this.name = pokemonName;
+            this.type = pokemonType;
+            this.attackList = pokemonAttackList;
+        }
+
+        const pichachu = new Pokemon("pichachu", "electric", ["Thunder Shock", "Thunder Wave", "Double Team"]);
+        const squirtel = new Pokemon("squirtel", "Water", ["Aqua Tail", "Shell Smash", "Iron Defense"]);
+        const charmander = new Pokemon("charmander", "fire", ["Dragon Breath", "Fire Fang", "Slash"]);
+
+        Pokemon.prototype.callPokemon = function () {
+            console.log("I choose you ", this.name)
+        }
+
+        Pokemon.prototype.attack = function () {
+            console.log(this.name, " used ", this.attackList[Math.floor(Math.random() * 3)])
+        }
+        pichachu.callPokemon()
+        pichachu.attack()
+        squirtel.callPokemon()
+        squirtel.attack()
+        charmander.callPokemon()
+        charmander.attack()
+    </script>
+</body>
+
+</html>

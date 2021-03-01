@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26.2-super_powers</title>
+</head>
+
+<body>
+
+    <script>
+        //        Instructions
+        // Your Task: Edit the storm object. Invoke the printSuperPower function using
+        // the storm object as the context of the function.
+        // So your output should be: my super power is flying.
+        // Well, Storm also controls the weather, so, whatever you choose!
+        // You cannot change the printSuperPower function
+        //     
+
+        const storm = {
+            superPower: "flying",
+            power: printSuperPower,
+        }
+
+        function printSuperPower() {
+            console.log("my superpower is " + this.superPower);
+        }
+
+        storm.power()
+    </script>
+</body>
+
+</html>
