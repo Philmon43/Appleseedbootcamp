@@ -17,21 +17,36 @@
         //  this
         // Instructions
         // 1. Build your own filter method with the help of prototypes
+        //filter
+        Array.prototype.myFilter = function (callback, context) {
+            arr = [];
+            for (var i = 0; i < this.length; i++) {
+                if (callback.call(context, this[i], i, this))
+                    arr.push(this[i]);
+            }
+            return arr;
+        };
         // 2. Build your own find method with the help of prototypes
+        Array.prototype.myFind = function (callback, context) {
+            for (var i = 0; i < this.length; i++) {
+                if (callback.call(context, this[i], i, this))
+                    return this[i]
+            }
+        };
         // Extra
         // 3. Build your own reduce method with the help of
         // prototypes
         // 
-        
-        
-        //filter
-        Array.prototype.myFilter = function(callback, content){
-            for(let i = 0; i < this.length;i++){
-                console.log(this.content)
+        Array.prototype.myReduce = function (callback, initialVal) {
+            var accumulator = (initialVal === undefined) ? undefined : initialVal;
+            for (var i = 0; i < this.length; i++) {
+                if (accumulator !== undefined)
+                    accumulator = callback.call(undefined, accumulator, this[i], i, this);
+                else
+                    accumulator = this[i];
             }
-        }
-        const numbers = [50, 20, 3, 80, 25, 9, 200];
-        numbers.myFilter()
+            return accumulator;
+        };
     </script>
 </body>
 

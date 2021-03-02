@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34.1-star_wars</title>
+</head>
+<style>
+    #starwar {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #starwar td,
+    #starwar th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #starwar tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #starwar tr:hover {
+        background-color: #ddd;
+    }
+
+    #starwar th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
+<body>
+
+    <script>
+        const fetchStartWars = (url) => {
+            return fetch(url).then((res) => res.json())
+        }
+        const getdata = async () => {
+            const data = await fetchStartWars("https://swapi.dev/api/people/")
+            const tableConctent = ["Name", "Height", "Hair Color", "Planet they came from", "Planet population"]
+            const table = document.createElement("table")
+            table.id = "starwar"
+            document.body.appendChild(table)
+            const newdata = data.results.map((a) => {
+                return {
+                    name: a.name,
+                    height: a.height,
+                    hair_color: a.hair_color,
+                    homeworld: a.homeworld,
+                    population: a.homeworld
+                }
+            })
+            const headerRow = document.createElement("tr")
+            for (let i = 0; i < tableConctent.length; i++) {
+                let newTh = document.createElement("th")
+                newTh.innerText = tableConctent[i]
+                headerRow.appendChild(newTh)
+
+            }
+            table.appendChild(headerRow)
+
+            newdata.forEach(obj => {
+                const newTr = document.createElement("tr")
+                for (el in obj) {
+                    let newTh = document.createElement("td")
+                    newTh.innerText = obj[el]
+                    newTr.appendChild(newTh)
+                }
+                table.appendChild(newTr)
+            });
+        }
+        getdata()
+    </script>
+</body>
+
+</html>
