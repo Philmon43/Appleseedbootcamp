@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie_app</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .conatiner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 10vh;
+    }
+
+    h1 {
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    button,
+    input {
+        font-size: 20px;
+        padding: 5px;
+        outline: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: grey;
+    }
+
+    .box {
+        width: 50%;
+        height: auto;
+        background: ghostwhite;
+        border-radius: 10px;
+    }
+
+    .description_box {
+        padding: 10px;
+    }
+
+    .message {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    .modal {
+        width: 500px;
+        height: 300px;
+        background: ghostwhite;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    .users_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+</style>
+
+<body style="background-color: #333;">
+    <div class="conatiner">
+        <h1>Movie search engine</h1>
+        <div class="search">
+            <input type="text">
+            <button>Seach</button>
+        </div>
+    </div>
+
+    <div class="users_container">
+
+    </div>
+
+    <div class="message">
+        <div class="modal">
+        </div>
+    </div>
+    <script>
+        const input = document.querySelector("input")
+        const btn = document.querySelector("button")
+        const body = document.querySelector(".users_container")
+        const messageModal = document.querySelector(".message")
+        const modal = document.querySelector(".modal");
+        const searchHistory = []
+        const getMovie = async (title) => {
+            const data = await fetch(`http://www.omdbapi.com/?t=${title}&apikey=d8e60a4`)
+                .then(res => res.json())
+                .catch(e => e)
+            return data
+        }
+
+
+
+        const addMovie = async (name) => {
+            const movie = await (getMovie(name))
+            if (movie.Error) {
+                messageModal.style.display = "flex"
+                modal.innerHTML = `<h3>Not found</h3>`
+                return modal
+            }
+            const rating = (obj) => {
+                for (el in obj) {
+                    return `<span>${obj[el]}</span>`
+                }
+            }
+            const box = `<a>
+                            <div class="box">
+                                <img src="${movie.Poster}" alt="${movie.Title}_Poster">
+                                <div class="description_box">
+                                    <h3><strong>Title</strong>: ${movie.Title}</h3>
+                                    <h3><strong>Genre</strong>: ${movie.Genre}</h3>
+                                    <h3><strong>Released</strong>: ${movie.Released}</h3>
+                                    <h3><strong>Plot</strong>: ${movie.Plot}</h3>
+                                    <h3><strong>Director</strong>: ${movie.Director}</h3>
+                                    <h3><strong>Actors</strong>: ${movie.Actors}</h3>
+                                    <h3><strong>Rating</strong>: ${rating(movie.Rating)}</h3>
+                                </div>
+                            </div>
+                        </a>`
+
+            body.innerHTML = box
+            console.log(movie)
+        }
+
+        document.querySelector("button").addEventListener("click", () => addMovie(input.value));
+        document.addEventListener("keypress", (e) => {
+            if (e.keyCode === 13) {
+                e.preventDefault()
+                addMovie(input.value)
+            }
+        });
+        messageModal.addEventListener("click", () => messageModal.style.display = "none");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github_api</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .conatiner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 30vh;
+    }
+
+    h1 {
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    button,
+    input {
+        font-size: 20px;
+        padding: 5px;
+        outline: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: grey;
+    }
+
+    .box {
+        width: 250px;
+        height: auto;
+        background: ghostwhite;
+        border-radius: 10px;
+    }
+
+    img {
+        width: 250px;
+        border-radius: 5px;
+    }
+
+    .description_box {
+        padding: 10px;
+    }
+
+    .users_container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 10px;
+    }
+
+    .message {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    .modal {
+        width: 500px;
+        height: 300px;
+        background: ghostwhite;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body style="background-color: #333;">
+    <div class="conatiner">
+        <h1>Github User search engine</h1>
+        <div class="search">
+            <input type="text">
+            <button>Seach</button>
+        </div>
+    </div>
+
+    <div class="users_container">
+
+    </div>
+
+    <div class="message">
+        <div class="modal">
+        </div>
+    </div>
+    <script>
+        //         Instructions
+        // Github has an awesome API that we can do among other
+        // thing’s, is to get information on a particular user.
+        // To get a particular github user information just type in your
+        // browser the following:
+        // https://api.github.com/users/{username}
+        // You will get back a json object.
+        // With this knowledge we can make a fun little app.
+        // Here is a small demo what we should do.
+        // Please style it better than this!
+        // Lets create a small app that will have an input field. When
+        // you type a user’s name in the input field you will fetch from
+        // the github api that particular users information and display
+        // a card of the users information.
+        // That card should have at least the following:
+        // 1. Avatar image
+        // 2. Name of user
+        // 3. Number of public repo’s
+        // When a user clicks on the card it will open a new page to
+        // that users github profile page.
+        // Things to think about:
+        // What will happen if a user types an invalid user name?
+        // What happens if the url is broken?
+        // What happens if a user types the same user name? We
+        // wouldn’t want to have duplicate cards of the same profile.
+        // User experience
+        // What will make a better user experience? Things come into
+        // mind:
+        // 1. When a user gets a profile we should empty our input.
+        // 2. We should focus on the input on page load and each
+        // time you get a new profile.
+        // 3. We should able to hit enter to search not just clicking on
+        // the button.
+        // 4. Anything else?
+        const input = document.querySelector("input")
+        const btn = document.querySelector("button")
+        const body = document.querySelector(".users_container")
+        const messageModal = document.querySelector(".message")
+        const modal = document.querySelector(".modal");
+        const searchHistory = []
+        const getUser = async (username) => {
+            const data = await fetch(`https://api.github.com/users/${username}`)
+                .then(res => res.json())
+                .catch(e => e)
+            return data
+        }
+
+        const addUser = async (name) => {
+            const user = await (getUser(name))
+            if (searchHistory.includes(name)) {
+                messageModal.style.display = "flex"
+                modal.innerHTML = "<h1 style='color:black'>You already got " + name + "</h1>"
+                return modal
+            } else if (user.message) {
+                messageModal.style.display = "flex"
+                modal.innerHTML = "<h1 style='color:black'>" + name + " not Found</h1>"
+                return modal
+            }
+
+            const box = `<a href="${user.html_url}" target="_blank">
+                            <div class="box">
+                                <img src="${user.avatar_url}" alt="${user.login}_avatar">
+                                <div class="description_box">
+                                    <h3>Name: ${user.login}</h3>
+                                    <h3>Public-repo: ${user.public_repos}</h3>
+                                </div>
+                            </div>
+                        </a>`
+
+            body.insertAdjacentHTML("beforeend", box);
+            searchHistory.push(user.login.toLowerCase())
+        }
+
+        document.querySelector("button").addEventListener("click", () => addUser(input.value));
+        document.addEventListener("keypress", (e) => {
+            if (e.keyCode === 13) {
+                e.preventDefault()
+                addUser(input.value)
+            }
+        });
+        messageModal.addEventListener("click", () => messageModal.style.display = "none");
+    </script>
+</body>
+
+</html>
