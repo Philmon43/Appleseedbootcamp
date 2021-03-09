@@ -2,6 +2,9 @@ const selectors = {
     btnAdd: document.querySelector(".btn"),
     addInput: document.querySelector(".addInput"),
     listConatiner: document.querySelector(".my_list"),
+    modal: document.querySelector(".modal"),
+    update_modal: document.querySelector(".update_modal"),
+    modal_input: document.querySelector(".modal_input")
 }
 
 class Todo {
@@ -39,6 +42,9 @@ class List {
             return a
         });
         this.sync()
+    }
+    getItem(id){
+        return this.arr.filter(a => a.id === id)
     }
     sync() {
         localStorage.setItem("data", JSON.stringify(this.arr));
@@ -79,6 +85,19 @@ const render = () => {
     }
 }
 render()
+
+//show modal
+const showModal = (id) => {
+    const todToUpdate = todo.getItem(parseInt(id))
+    selectors.modal_input.value = todToUpdate[0].task
+    selectors.update_modal.setAttribute("data-id", todToUpdate[0].id)
+    selectors.modal.style.display = "flex"
+}
+
+//hide modal
+const hideModal = () => selectors.modal.style.display = "none"
+
+
 //add new todo
 const addNewTodo = () => {
     const task = selectors.addInput.value;
@@ -90,10 +109,25 @@ const removeTodo = (id) => {
     todo.remove(parseInt(id))
     render()
 }
+
+//update todo
+const updateTodo = (id) => {
+    todo.update(id,selectors.modal_input.value)
+    hideModal()
+    render()
+}
+
+//listen addnewitem click
 selectors.btnAdd.addEventListener("click", addNewTodo);
 
+//listen delete update click
 selectors.listConatiner.addEventListener("click", (e) => {
     if (e.target.classList[0] === "del") {
         removeTodo(e.target.getAttribute("data-id"))
+    }else if(e.target.classList[0] === "update"){
+        showModal(e.target.getAttribute("data-id"))
     }
 });
+
+//listen modal click
+selectors.update_modal.addEventListener("click", (e) => updateTodo(parseInt(e.target.getAttribute("data-id"))));
