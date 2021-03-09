@@ -49,19 +49,16 @@ const todo = new List()
 const render = () => {
     try {
         const data = JSON.parse(localStorage.getItem("data"))
-        console.log(data)
         selectors.listConatiner.innerText = "";
         data.forEach(data => {
             let div = document.createElement("div");
             let detail = document.createElement("div")
             let task = document.createElement("h2");
             let time = document.createElement("p")
-            let updInput = document.createElement("input");
             let del = document.createElement("button");
             let update = document.createElement("button");
             detail.appendChild(task)
             detail.appendChild(time)
-            detail.appendChild(updInput)
             div.appendChild(detail)
             div.appendChild(update)
             div.appendChild(del)
@@ -75,9 +72,6 @@ const render = () => {
             update.setAttribute("data-id", data.id);
             div.classList.add("box");
             detail.classList.add("detail");
-            updInput.classList.add("innerInput");
-            updInput.classList.add("input-" + data.id);
-            updInput.placeholder = data.task
             selectors.listConatiner.appendChild(div)
         });
     } catch (e) {
@@ -91,5 +85,15 @@ const addNewTodo = () => {
     todo.addNew(task)
     render()
 }
-
+//removeTodo
+const removeTodo = (id) => {
+    todo.remove(parseInt(id))
+    render()
+}
 selectors.btnAdd.addEventListener("click", addNewTodo);
+
+selectors.listConatiner.addEventListener("click", (e) => {
+    if (e.target.classList[0] === "del") {
+        removeTodo(e.target.getAttribute("data-id"))
+    }
+});
