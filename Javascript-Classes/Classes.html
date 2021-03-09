@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Classes</title>
+</head>
+
+<body>
+
+
+    <script>
+        let arr = []
+        class Animal {
+            constructor(name, sound) {
+                this.name = name;
+                this.sound = sound;
+            }
+            getName() {
+                return this.name
+            }
+            getSound() {
+                return this.sound
+            }
+
+            print() {
+                console.log(`${this.getName()} ${this.getSound()}`);
+            }
+        }
+        const cow = new Animal("Cow", "Moo");
+        const dog = new Animal("dog", "woof");
+        const cat = new Animal("cat", "meow");
+        cow.print()
+    </script>
+</body>
+
+</html>

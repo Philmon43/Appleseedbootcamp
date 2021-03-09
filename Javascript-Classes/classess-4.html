@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        
+        class Point {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            getX() {
+                return this.x
+            }
+            getY() {
+                return this.y
+            }
+            addToX(x2) {
+                this.x += x2
+            }
+            addToY(y2) {
+                this.y += y2
+            }
+            setX(newX) {
+                this.x = newX
+            }
+            setY(newY) {
+                this.y = newY
+            }
+            addPoint(point) {
+                this.x = point.x
+                this.y = point.y
+            }
+            same(point) {
+                (point.x === this.x && point.y === this.y) ?
+                console.log(true): console.log(false)
+            }
+            print() {
+                return console.log(`x: ${this.x} y:${this.y}`)
+            }
+        }
+        class PointWorld {
+            constructor(point, point2, point3) {
+                this.points = [Object.values(point), Object.values(point2), Object.values(point3)]
+            }
+            filterIt() {
+                let filtered = []
+                this.points.forEach((x) => {
+                    for (let v of x) {
+                        filtered.includes(v) ? `` : filtered.push(v);
+                    }
+                })
+                return filtered
+            }
+            everyX() {
+                const newMp = this.points.map((x => x = x[0]))
+                return newMp
+            }
+            bring(point) {
+                let isAv = console.log(false)
+                this.points.forEach((x) => {
+                    if (Object.values(point)[0] === x[0] && Object.values(point)[1] === x[1]) {
+                        isAv = console.log(point)
+                    }
+                })
+                return isAv
+
+            }
+        }
+    </script>
+</body>
+
+</html>

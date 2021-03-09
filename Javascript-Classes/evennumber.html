@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Write classNumber, the class represents an array of prime numbers,
+    The array will be in ascending order from the smallest prime number to the largest,
+    There are no duplicates of numbers in the array.
+    The class will have the following class variables:
+    - numList - an array of prime numbers
+    2. Create an empty constructor that narrows an empty array of numbers.
+    3. Create an addNum operation that receives num and inserts it into the array, true must be returned if the number
+    is entered
+    To the array, otherwise false must be returned.
+    4. Create an action removeNum that receives num and removes the number from the array. If it exists, it must be
+    returned
+    true If the number is removed from the array, otherwise false must be returned.
+    5. Create a getAll action that returns the array.
+    6. Create a print operation that prints the entire array.
+    7. Create an instance from the sortNumber class and enter 4 numbers into it.
+    8. Create another instance from the sortNumber class and enter at least 2 numbers into it
+    9. Create a share operation in the sortNumber class that receives a sortNumber object and returns several numbers
+    It has in common with the present object
+    10. Create a share action in the sortNumber class that receives a sortNumber object and returns several numbers
+    It has in common with the present object
+    11. Create a union action in the sortNumber class that accepts a sortNumber object and returns a new array with
+    All numbers of the sortNumber object and the current object without multiplying numbers.
+    <script>
+        class sortNum {
+            constructor(arr) {
+                this.numList = arr
+            }
+            addNum(num) {
+                if (this.isPrime(num)) {
+                    this.numList.push(num)
+                    return console.log(true)
+                }
+                return console.log(false)
+
+            }
+            isPrime(num) {
+                if (num === 1) {
+                    return false
+                }
+                for (let v = 2; v < num; v++) {
+                    if (num % v == 0) {
+                        return false
+                    }
+                }
+                return true
+            }
+            removeNum(num) {
+                if (this.numList.includes(num)) {
+                    this.numList.splice(this.numList.indexOf(num), 1)
+                    return true
+                }
+                return false
+            }
+            getAll() {
+                return this.numList
+            }
+            print() {
+                return console.log(this.numList)
+            }
+            union(sortNum) {
+                let count = 0
+                const map = this.numList.map((x => {
+                    sortNum.numList.includes(x) ? count++ : ""
+                }))
+                return console.log(count)
+            }
+            share(sortNum) {
+                let count = 0
+                this.numList.filter((x => {
+                    sortNum.numList.includes(x) ? count++ : ""
+                }))
+                return console.log(count)
+            }
+        }
+
+
+
+        const ex = new sortNum([5, 7, 13, 17])
+        const ex2 = new sortNum([5, 7, 11, 17])
+        console.log(ex)
+        ex.addNum(23)
+        ex.addNum(37)
+        // ex.union(ex2)
+        ex.share(ex2)
+        ex.print()
+    </script>
+</body>
+
+</html>
