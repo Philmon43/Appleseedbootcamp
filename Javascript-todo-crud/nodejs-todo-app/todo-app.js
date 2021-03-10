@@ -22,6 +22,9 @@ const markComplete = (task) => {
                 todoItems[i].isCompleted = true
             }
         }
+        return todoItems
+    }else{
+        return false
     }
 }
 
@@ -32,6 +35,9 @@ const markUnComplete = (task) => {
                 todoItems[i].isCompleted = false
             }
         }
+        return todoItems
+    }else{
+        return false
     }
 }
 
@@ -42,6 +48,5 @@ addItem("do crud with UI") //
 markComplete("todo app") //
 markUnComplete("9 am study") //
 deleteItem("9 am study") //
-console.log("after---", todoItems)
 
-module.exports = {addItem, deleteItem, markComplete, markUnComplete}
+module.exports = {addItem, deleteItem, markComplete, markUnComplete, todoItems}
