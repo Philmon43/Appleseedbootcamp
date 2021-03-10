@@ -15,7 +15,7 @@ class Todo {
         this.timeCreated = Date.now()
     }
 }
-class List {
+class TodoList {
     constructor() {
         this.arr = JSON.parse(localStorage.getItem("data")) || [];
     }
@@ -35,6 +35,7 @@ class List {
         this.sync()
     }
     update(id, task) {
+        if (task === "") return
         this.arr = this.arr.filter(a => {
             if (id === a.id) {
                 return a.task = task
@@ -43,14 +44,14 @@ class List {
         });
         this.sync()
     }
-    getItem(id){
+    getItem(id) {
         return this.arr.filter(a => a.id === id)
     }
     sync() {
         localStorage.setItem("data", JSON.stringify(this.arr));
     }
 }
-const todo = new List()
+const todo = new TodoList()
 
 const render = () => {
     try {
@@ -106,13 +107,17 @@ const addNewTodo = () => {
 }
 //removeTodo
 const removeTodo = (id) => {
-    todo.remove(parseInt(id))
-    render()
+    const todoToRemove = todo.getItem(parseInt(id))
+    const allow = confirm("Are sure you want to delete " + ` '${todoToRemove[0].task} '`);
+    if (allow) {
+        todo.remove(parseInt(id))
+        render()
+    }
 }
 
 //update todo
 const updateTodo = (id) => {
-    todo.update(id,selectors.modal_input.value)
+    todo.update(parseInt(id), selectors.modal_input.value)
     hideModal()
     render()
 }
@@ -124,10 +129,10 @@ selectors.btnAdd.addEventListener("click", addNewTodo);
 selectors.listConatiner.addEventListener("click", (e) => {
     if (e.target.classList[0] === "del") {
         removeTodo(e.target.getAttribute("data-id"))
-    }else if(e.target.classList[0] === "update"){
+    } else if (e.target.classList[0] === "update") {
         showModal(e.target.getAttribute("data-id"))
     }
 });
 
 //listen modal click
-selectors.update_modal.addEventListener("click", (e) => updateTodo(parseInt(e.target.getAttribute("data-id"))));
+selectors.update_modal.addEventListener("click", (e) => updateTodo(e.target.getAttribute("data-id")));

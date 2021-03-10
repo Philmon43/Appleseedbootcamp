@@ -2,11 +2,11 @@ let todoItems = [];
 const found = (task) => todoItems.filter(a => a.task === task)
 
 const addItem = (task) => {
-    if (!found(task).length > 0) return todoItems.push({
-        id: todoItems.length + 1,
-        task,
-        isCompleted: false
-    })
+    if (!found(task).length > 0){
+        const todo = {id: todoItems.length + 1,task,isCompleted: false} 
+        todoItems.push(todo)
+        return todo
+    }
     throw ("there  is an item already");
 }
 
@@ -43,3 +43,5 @@ markComplete("todo app") //
 markUnComplete("9 am study") //
 deleteItem("9 am study") //
 console.log("after---", todoItems)
+
+module.exports = {addItem, deleteItem, markComplete, markUnComplete}
