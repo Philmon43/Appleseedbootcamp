@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgba(255, 127, 80, 0.5);
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.table_content,
+.table_hader {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.table_content>div,
+.table_hader>div {
+    color: white;
+    text-align: center;
+    padding: 8px 12px;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+.table_content:nth-child(even) {
+    background: rgba(51, 51, 51, 0.8);
+}
+
+.table_content:nth-child(odd) {
+    background: rgba(51, 51, 51, 0.9);
+}
+
+.table_content {
+    margin-top: 5px;
+    padding-right: 5px;
+    height: 60px;
+}
+
+.table_content {
+    grid-gap: 5px;
+}
+
+.edit_btn,
+.delete_btn,
+.confirm,
+.cancel {
+    height: 30px;
+    border-radius: 15px;
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+}
+.edit_btn, .cancel{
+    background: orange;
+}
+.delete_btn{
+    background: crimson;
+}
+.confirm{
+    background: greenyellow;
+}
+
+.edit_btn:hover,
+.delete_btn:hover,
+.confirm:hover,
+.cancel:hover {
+    opacity: .7;
+}
+
+.header_list {
+    background: ghostwhite;
+    padding: 10px 15px;
+}
+
+.table_hader>div {
+    color: #333;
+    font-weight: bolder;
+}
+
+.city {
+    position: relative;
+}
+
+.city:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -18px;
+    background: #333;
+    width: 75%;
+    margin: 0 auto;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 812px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+    .city:hover::before{
+        color: black;
+        font-weight: bold;
+    }
+}
